@@ -1,0 +1,15 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /home/aidin/Documents/Programmi/XilinxVivado/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 432ba454f7ac4ffcaf60fd5ba0bd0573 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot tb_dff_behav xil_defaultlib.tb_dff -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling architecture rtl of entity xil_defaultlib.dff [dff_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_dff
+Built simulation snapshot tb_dff_behav

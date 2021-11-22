@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_cmb_clk_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_cmb_clk" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1000000000fs"></ZoomEndTime>
+      <Cursor1Time time="30000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="146"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject type="logic" fp_name="/tb_cmb_clk/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_cmb_clk/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_cmb_clk/a">
+      <obj_property name="ElementShortName">a</obj_property>
+      <obj_property name="ObjectShortName">a</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_cmb_clk/ab">
+      <obj_property name="ElementShortName">ab</obj_property>
+      <obj_property name="ObjectShortName">ab</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_cmb_clk/cmb">
+      <obj_property name="ElementShortName">cmb</obj_property>
+      <obj_property name="ObjectShortName">cmb</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_cmb_clk/ltch">
+      <obj_property name="ElementShortName">ltch</obj_property>
+      <obj_property name="ObjectShortName">ltch</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_cmb_clk/ff">
+      <obj_property name="ElementShortName">ff</obj_property>
+      <obj_property name="ObjectShortName">ff</obj_property>
+   </wvobject>
+</wave_config>
