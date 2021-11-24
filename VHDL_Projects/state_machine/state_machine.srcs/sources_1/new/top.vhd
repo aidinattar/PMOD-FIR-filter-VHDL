@@ -38,9 +38,33 @@ entity top is
            outa : out STD_LOGIC);
 end top;
 
-architecture Behavioral of top is
+architecture tff_sm of top is
 
+type state_type is (ST0, ST1);
+signal state : state_type;
 begin
+    sync_proc : process(clk)
+    begin
+        if (rising_edge(clk)) then
+            if (rst = '1') then
+                state <= ST0;
+                outa <= '0'; -- pre-assign
+            else
+                case state is
+                when ST0 => -- items regarding state ST0 Z1 <= '0'; -- Moore output
+                    outa <= '0'; -- pre-assign
+                    if (ina = '1') then state <= ST1;
+                    end if;
+                when ST1 => -- items regarding state ST1
+                    outa <= '1'; -- Moore output
+                    if (ina = '1') then state <= ST0;
+                    end if;
+                when others => -- the catch-all condition
+                    outa <= '0'; -- arbitrary; it should never
+                    state <= ST0; -- make it to these two statements
+                end case;
+            end if;
+        end if;
+    end process sync_proc;
 
-
-end Behavioral;
+end tff_sm;
