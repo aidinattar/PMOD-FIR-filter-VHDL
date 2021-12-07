@@ -44,11 +44,13 @@ component Baudrate is
            b_out : out std_logic );
 end component;
 
-type state_type is (IDLE, VALID, STOP);
-signal state : state_type := IDLE;
+type state_type is (IDLE,    VALID,   STOP,  START,
+                    TxBIT0, TxBIT1, TxBIT2, TxBIT3,
+                    TxBIT4, TxBIT5, TxBIT6, TxBIT7);
+signal state   : state_type := IDLE;
 signal counter : unsigned(3 downto 0) := (others => '0');
---signal data  : unsigned(9 downto 0) := ('0','1','1','0','0','0','0','1');
-signal brate : std_logic;
+signal data    : unsigned(7 downto 0) := ('0','1','1','0','0','0','0','1');
+signal brate   : std_logic;
 
 begin
 
@@ -59,12 +61,14 @@ begin
         if rising_edge(clk) then
             if brate = '1' then
                 case state is
-                when IDLE =>
+                when VALID =>
                     if data = '0' then
-                        state <= VALID;
+                        state <= START;
                     end if;
                     tx <= '1';
-                when VALID =>
+                when START =>
+                
+                
                     if counter(3) = '1' then
                         state <= STOP;
                         tx <= '1';
