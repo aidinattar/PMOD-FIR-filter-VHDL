@@ -39,7 +39,8 @@ architecture Behavioral of tb_uart is
 
 component uart_top is
     Port ( clk  : in STD_LOGIC;
-           data : in std_logic;
+           --data : in std_logic;
+           btn  : in STD_LOGIC;
            tx   : out STD_LOGIC );
            --busy : out STD_LOGIC);
 end component uart_top;
@@ -49,13 +50,13 @@ component Baudrate is
            b_out : out STD_LOGIC);
 end component Baudrate;           
 
-signal s_clk, s_data, s_tx, s_b_out : std_logic;
-signal size : integer := 0;
-signal fake_data : unsigned(11 downto 0) := ( '1', '1', '0', '1','1','0','0','0','0','1', '1', '1');
+signal s_clk, s_btn, s_tx, s_b_out : std_logic;
+--signal size : integer := 0;
+--signal fake_data : unsigned(11 downto 0) := ( '1', '1', '0', '1','1','0','0','0','0','1', '1', '1');
 
 begin
     
-    uut1 : uart_top port map ( clk => s_clk, data => s_data, tx => s_tx );
+    uut1 : uart_top port map ( clk => s_clk, btn => s_btn, tx => s_tx );
     uut2 : Baudrate port map ( clk => s_clk, b_out => s_b_out );
     
     p_clk : process is
@@ -64,14 +65,10 @@ begin
         s_clk <= '0'; wait for 5 ns;
     end process p_clk;         
     
-    p_data : process(s_clk) is
+    p_btn: process is
     begin
-        if rising_edge(s_clk) then
-            if s_b_out = '1' and size < 12 then
-                s_data <= fake_data(size);
-                size <= size + 1;
-            end if;
-        end if;
-    end process p_data;
+        s_btn <= '0'; wait for 100 ns;
+        s_btn <= '1'; wait for 300000 ns;
+    end process p_btn;
 
 end Behavioral;

@@ -33,7 +33,8 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity uart_top is
     Port ( clk  : in STD_LOGIC;
-           data : in std_logic;
+           --data : in std_logic;
+           btn  : in STD_LOGIC;
            tx   : out STD_LOGIC );
            --busy : out STD_LOGIC);
 end uart_top;
@@ -61,21 +62,41 @@ begin
         if rising_edge(clk) then
             if brate = '1' then
                 case state is
-                when VALID =>
-                    if data = '0' then
-                        state <= START;
+                when IDLE =>
+                    if btn = '1' then
+                        state <= VALID;
                     end if;
                     tx <= '1';
+                when VALID =>
+                    state <= START;
+                    tx <= '1';
                 when START =>
-                
-                
-                    if counter(3) = '1' then
-                        state <= STOP;
-                        tx <= '1';
-                    else
-                        tx <= data;
-                        counter <= counter + 1;
-                    end if;
+                    state <= TxBIT0;
+                    tx <= '1';
+                when TxBIT0 =>
+                    tx <= data(0);
+                    state <= TxBIT1;
+                when TxBIT1 =>
+                    tx <= data(1);
+                    state <= TxBIT2;
+                when TxBIT2 =>
+                    tx <= data(2);
+                    state <= TxBIT3;
+                when TxBIT3 =>
+                    tx <= data(3);
+                    state <= TxBIT4;
+                when TxBIT4 =>
+                    tx <= data(4);
+                    state <= TxBIT5;
+                when TxBIT5 =>
+                    tx <= data(5);
+                    state <= TxBIT6;
+                when TxBIT6 =>
+                    tx <= data(6);
+                    state <= TxBIT7;
+                when TxBIT7 =>
+                    tx <= data(7);
+                    state <= STOP;
                 when STOP =>
                     state <= IDLE;
                     tx <= '1';
