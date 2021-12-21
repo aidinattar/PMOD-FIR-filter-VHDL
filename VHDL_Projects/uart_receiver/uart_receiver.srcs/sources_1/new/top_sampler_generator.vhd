@@ -29,7 +29,7 @@ entity sampler_generator is
 end entity sampler_generator;
 
 architecture rtl of sampler_generator is
-    type state_type is (IDLE,    VALID,   STOP,  START,
+    type state_type is (IDLE,             STOP,  START,
                         TxBIT0, TxBIT1, TxBIT2, TxBIT3,
                         TxBIT4, TxBIT5, TxBIT6, TxBIT7);
 
@@ -43,25 +43,34 @@ architecture rtl of sampler_generator is
   signal pulse_out      : std_logic;
   signal enable_counter : std_logic             := '0';
   signal enable_delay   : std_logic             := '0';
+  component baudrate_generator is
+    Port ( clk : in STD_LOGIC;
+           enable : in STD_LOGIC;
+           b_out : out STD_LOGIC);
+  end component baudrate_generator;
 begin
 
+  uut : baudrate_generator port map( b_out  => pulse_out, 
+                                     enable => enable_counter,
+                                     clk    => clock );
+
   -- 
-  pulse_generator : process (clock) is
-  begin  -- process main
-    if rising_edge(clock) then          -- rising clock edge
-      if enable_counter = '1' then
-        counter <= counter + 1;
-        if counter = divisor then
-          pulse_out <= '1';
-          counter   <= (others => '0');
-        else
-          pulse_out <= '0';
-        end if;
-      else
-        counter <= (others => '0');
-      end if;
-    end if;
-  end process pulse_generator;
+  --pulse_generator : process (clock) is
+  --begin  -- process main
+  --  if rising_edge(clock) then          -- rising clock edge
+  --    if enable_counter = '1' then
+  --      counter <= counter + 1;
+  --      if counter = divisor then
+  --        pulse_out <= '1';
+  --       counter   <= (others => '0');
+  --     else
+  --        pulse_out <= '0';
+  --      end if;
+  --    else
+  --      counter <= (others => '0');
+  --    end if;
+  --  end if;
+  --end process pulse_generator;
 
   state_machine : process (clock) is
   begin  -- process state_machine
