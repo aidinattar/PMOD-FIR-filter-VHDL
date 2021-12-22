@@ -44,7 +44,7 @@ architecture rtl of sampler_generator is
   signal enable_counter : std_logic             := '0';
   signal enable_delay   : std_logic             := '0';
   component baudrate_generator is
-    Port ( clk : in STD_LOGIC;
+    Port ( clock : in STD_LOGIC;
            enable : in STD_LOGIC;
            b_out : out STD_LOGIC);
   end component baudrate_generator;
@@ -52,7 +52,7 @@ begin
 
   uut : baudrate_generator port map( b_out  => pulse_out, 
                                      enable => enable_counter,
-                                     clk    => clock );
+                                     clock  => clock );
 
   -- 
   --pulse_generator : process (clock) is

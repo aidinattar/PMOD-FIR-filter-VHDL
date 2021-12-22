@@ -32,18 +32,18 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Baudrate is
-    Port ( clk    : in STD_LOGIC;
-           enable : in STD_LOGIC;
+entity baudrate_generator is
+    Port ( clock  : in  STD_LOGIC;
+           enable : in  STD_LOGIC;
            b_out  : out STD_LOGIC);
-end Baudrate;
+end baudrate_generator;
 
-architecture Behavioral of Baudrate is
+architecture Behavioral of baudrate_generator is
     signal counter: unsigned( 9 downto 0):= (others => '0');
     begin
-        p_cnt: process(clk) is
+        p_cnt: process(clock) is
         begin
-            if rising_edge(clk) then
+            if rising_edge(clock) then
                 if enable = '1' then
                     counter <= counter + 1;
                 else
