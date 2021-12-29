@@ -1,0 +1,5 @@
+VHDL_Projects/*/*.cache/
+VHDL_Projects/*/*.sim/
+VHDL_Projects/*/*.runs/
+VHDL_Projects/*/*.ip_user_files/
+VHDL_Projects/*/*.hw/
