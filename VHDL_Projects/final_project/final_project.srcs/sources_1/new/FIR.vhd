@@ -17,7 +17,7 @@ port (
   clk        : in  std_logic;                        -- system clock
   rst        : in  std_logic;                        -- reset
   i_data     : in  std_logic_vector( 7 downto 0);    -- input at time n
-  o_data     : out std_logic_vector( 9 downto 0));   -- output at time n
+  o_data     : out std_logic_vector( 10 downto 0));   -- output at time n
 end fir_filter;
 
 architecture rtl of fir_filter is
@@ -39,7 +39,7 @@ p_input : process (rst,clk)
 begin
   if(rst='1') then
     p_data       <= (others=>(others=>'0'));
-    r_coeff      <= (others=>(others=>'0'));
+    --r_coeff      <= (others=>(others=>'0'));
   elsif(rising_edge(clk)) then
     p_data      <= signed(i_data)&p_data(0 to p_data'length-2);
   end if;
@@ -81,7 +81,7 @@ begin
   if(rst='1') then
     o_data     <= (others=>'0');
   elsif(rising_edge(clk)) then
-    o_data     <= std_logic_vector(r_add_st1(17 downto 8));
+    o_data     <= std_logic_vector(r_add_st1(17 downto 7));
   end if;
 end process p_output;
 
