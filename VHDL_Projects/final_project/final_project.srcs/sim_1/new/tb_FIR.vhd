@@ -41,13 +41,13 @@ component fir_filter is
 port (
   clk        : in  std_logic;                        -- system clock
   rst        : in  std_logic;                        -- reset
-  i_data     : in  std_logic_vector( 7 downto 0);    -- input at time n
-  o_data     : out std_logic_vector( 10 downto 0));   -- output at time n
+  i_data     : in  std_logic_vector( 23 downto 0);    -- input at time n
+  o_data     : out std_logic_vector( 23 downto 0));   -- output at time n
 end component fir_filter;
 
 signal s_clk, s_rst : std_logic;
-signal s_i_data     : std_logic_vector( 7 downto 0 );
-signal s_o_data     : std_logic_vector( 10 downto 0 ); 
+signal s_i_data     : std_logic_vector( 23 downto 0 );
+signal s_o_data     : std_logic_vector( 23 downto 0 ); 
 
 begin
 
@@ -55,8 +55,8 @@ uut : fir_filter port map( clk => s_clk, rst => s_rst, i_data => s_i_data, o_dat
 
 p_clk : process is
 begin
-    s_clk <= '1'; wait for 5 ns;
-    s_clk <= '0'; wait for 5 ns;
+    s_clk <= '1'; wait for 13 us;
+    s_clk <= '0'; wait for 12 us;
 end process p_clk;
 
 p_rst : process is
@@ -67,22 +67,10 @@ end process p_rst;
 
 p_i_data : process is
 begin
-    s_i_data <= std_logic_vector(to_signed(0, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(1, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(2, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(3, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(4, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(5, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(6, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(7, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(8, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(9, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(10, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(11, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(12, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(13, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(14, s_i_data'length)); wait for 10 ns;
-    s_i_data <= std_logic_vector(to_signed(15, s_i_data'length)); wait for 10 ns;
-end process p_i_data;
+    s_i_data <= std_logic_vector(to_signed(0, s_i_data'length)); wait for 25 us;
+    s_i_data <= std_logic_vector(to_signed(4, s_i_data'length)); wait for 25 us;
+    s_i_data <= std_logic_vector(to_signed(0, s_i_data'length)); wait for 25 us;
+    s_i_data <= std_logic_vector(to_signed(4, s_i_data'length)); wait for 25 us;
+    end process p_i_data;
 
 end Behavioral;
