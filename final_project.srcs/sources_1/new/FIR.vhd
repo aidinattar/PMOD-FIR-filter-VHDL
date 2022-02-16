@@ -51,7 +51,7 @@ signal r_coeff              : t_coeff := (to_signed(coeff1 , 8), to_signed(coeff
 signal p_data               : t_data_pipe;
 signal r_mult               : t_mult;
 --signal r_add_st0            : t_add_st0;
-signal r_add_st1            : signed(10+d_width downto 0);
+signal r_add_st1            : signed(22+d_width downto 0);
 
 begin
 
