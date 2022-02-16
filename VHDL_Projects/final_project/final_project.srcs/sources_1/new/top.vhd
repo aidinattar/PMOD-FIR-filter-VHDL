@@ -40,7 +40,7 @@ ENTITY top IS
         shift       :  INTEGER := 7;
         d_width     :  INTEGER := 24);                    --data width
     PORT(
-        CLOCK100MHZ :  IN  STD_LOGIC;                     --system clock (100 MHz on Basys board)
+        CLK100MHZ :  IN  STD_LOGIC;                     --system clock (100 MHz on Basys board)
         reset_n     :  IN  STD_LOGIC;                     --active low asynchronous reset
         mclk        :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --master clock
         sclk        :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --serial clock (or bit clock)
@@ -51,13 +51,14 @@ END top;
 
 ARCHITECTURE rtl OF top IS
 
-    SIGNAL master_clk   :  STD_LOGIC;                             --internal master clock signal
-    SIGNAL serial_clk   :  STD_LOGIC := '0';                      --internal serial clock signal
-    SIGNAL word_select  :  STD_LOGIC := '0';                      --internal word select signal
-    SIGNAL l_data_rx    :  STD_LOGIC_VECTOR(d_width-1 DOWNTO 0);  --left channel data received from I2S Transceiver component
-    SIGNAL r_data_rx    :  STD_LOGIC_VECTOR(d_width-1 DOWNTO 0);  --right channel data received from I2S Transceiver component
-    SIGNAL l_data_tx    :  STD_LOGIC_VECTOR(d_width-1 DOWNTO 0);  --left channel data to transmit using I2S Transceiver component
-    SIGNAL r_data_tx    :  STD_LOGIC_VECTOR(d_width-1 DOWNTO 0);  --right channel data to transmit using I2S Transceiver component
+    SIGNAL master_clk    :  STD_LOGIC;                             --internal master clock signal
+    SIGNAL serial_clk    :  STD_LOGIC := '0';                      --internal serial clock signal
+    SIGNAL word_select   :  STD_LOGIC := '0';                      --internal word select signal
+    SIGNAL n_word_select :  STD_LOGIC := '0';                      --internal word select signal
+    SIGNAL l_data_rx     :  STD_LOGIC_VECTOR(d_width-1 DOWNTO 0);  --left channel data received from I2S Transceiver component
+    SIGNAL r_data_rx     :  STD_LOGIC_VECTOR(d_width-1 DOWNTO 0);  --right channel data received from I2S Transceiver component
+    SIGNAL l_data_tx     :  STD_LOGIC_VECTOR(d_width-1 DOWNTO 0);  --left channel data to transmit using I2S Transceiver component
+    SIGNAL r_data_tx     :  STD_LOGIC_VECTOR(d_width-1 DOWNTO 0);  --right channel data to transmit using I2S Transceiver component
             
  
     --declare PLL to create 11.29 MHz master clock from 100 MHz system clock
@@ -86,7 +87,7 @@ ARCHITECTURE rtl OF top IS
             r_data_rx   :  OUT  STD_LOGIC_VECTOR(d_width-1 DOWNTO 0));  --right channel data received
     END COMPONENT;
     
-    COMPONENT r_fir_filter IS
+    COMPONENT fir_filter IS
         GENERIC(
             d_width : integer := 24;
             shift   : integer := 7);
@@ -95,25 +96,15 @@ ARCHITECTURE rtl OF top IS
             rst        : in  std_logic;                        -- reset
             i_data     : in  std_logic_vector( d_width-1 downto 0);    -- input at time n
             o_data     : out std_logic_vector( d_width-1 downto 0));   -- output at time n
-    END COMPONENT r_fir_filter;
+    END COMPONENT fir_filter;
 
-    COMPONENT l_fir_filter IS
-        GENERIC(
-            d_width : integer := 24;
-            shift   : integer := 7);
-        PORT(
-            clk        : in  std_logic;                        -- system clock
-            rst        : in  std_logic;                        -- reset
-            i_data     : in  std_logic_vector( d_width-1 downto 0);    -- input at time n
-            o_data     : out std_logic_vector( d_width-1 downto 0));   -- output at time n
-    END COMPONENT l_fir_filter;
 
 
 BEGIN
 
     --instantiate PLL to create master clock
     i2s_clock: clk_wiz_0 
-    PORT MAP(clk_in1 => CLOCK100MHZ, clk_out1 => master_clk);
+    PORT MAP(clk_in1 => CLK100MHZ, clk_out1 => master_clk);
   
     --instantiate I2S Transceiver component
     i2s_transceiver_0: i2s_transceiver
@@ -121,13 +112,14 @@ BEGIN
     PORT MAP(reset_n => reset_n, mclk => master_clk, sclk => serial_clk, ws => word_select, sd_tx => sd_tx, sd_rx => sd_rx,
              l_data_tx => l_data_tx, r_data_tx => r_data_tx, l_data_rx => l_data_rx, r_data_rx => r_data_rx);
              
-    r_fir_filter0: r_fir_filter
+    n_word_select <= not word_select;
+    r_fir_filter: fir_filter
     GENERIC MAP(d_width => d_width, shift => shift)
-    PORT MAP(clk => not word_select, rst => reset, i_data => r_data_rx, o_data => r_data_tx);
+    PORT MAP(clk => n_word_select, rst => reset_n, i_data => r_data_rx, o_data => r_data_tx);
     
-    l_fir_filter0: l_fir_filter
+    l_fir_filter: fir_filter
     GENERIC MAP(d_width => d_width, shift => shift)
-    PORT MAP(clk => word_select, rst => reset, i_data => l_data_rx, o_data => l_data_tx);
+    PORT MAP(clk => word_select, rst => reset_n, i_data => l_data_rx, o_data => l_data_tx);
 
 
     mclk(0) <= master_clk;  --output master clock to ADC

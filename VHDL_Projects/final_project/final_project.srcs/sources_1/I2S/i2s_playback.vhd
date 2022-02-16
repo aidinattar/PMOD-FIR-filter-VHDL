@@ -27,7 +27,7 @@ ENTITY i2s_playback IS
     GENERIC(
         d_width     :  INTEGER := 24);                    --data width
     PORT(
-        CLOCK100MHZ :  IN  STD_LOGIC;                     --system clock (100 MHz on Basys board)
+        CLK100MHZ   :  IN  STD_LOGIC;                     --system clock (100 MHz on Basys board)
         reset_n     :  IN  STD_LOGIC;                     --active low asynchronous reset
         mclk        :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --master clock
         sclk        :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --serial clock (or bit clock)
@@ -76,7 +76,7 @@ BEGIN
 
     --instantiate PLL to create master clock
     i2s_clock: clk_wiz_0 
-    PORT MAP(clk_in1 => CLOCK100MHZ, clk_out1 => master_clk);
+    PORT MAP(clk_in1 => CLK100MHZ, clk_out1 => master_clk);
   
     --instantiate I2S Transceiver component
     i2s_transceiver_0: i2s_transceiver
