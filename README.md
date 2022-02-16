@@ -1,29 +1,18 @@
-# MAPD_Projects
+# PMOD I2S implementation with FIR filter
 
 Management and Analysis of Physical Dataset course A.Y. 2021/2022.
 
-Prof. Gianmaria Collazuol,
+Group 5:
+    - Agosti Luca
+    - Attar Aidin
+    - Baci Ema
+    - Coppi Alberto
 
-Prof. Andrea Triossi, 
+Professors:
+    - Prof. Gianmaria Collazuol,
+    - Prof. Andrea Triossi,
+    - Prof. Antonio Bergnoli
 
-Prof. Antonio Bergnoli
-
-## Hello_World
-
-## Hello_World_Var1
-
-## slower_counter
-
-## multiplexer
-
-## synchronizer
-
-## cmb_clk
-
-## state_machine
-
-## pattern_detect
-
-## baudrate_generator
-
-## uart
+Repository organization:
+    - The folder final_project.srcs contains the final files ready to be used in the computer connected to the FPGA.
+    - The Jupyter Notebook contains all python code used for calibration and data analysis
