@@ -57,7 +57,7 @@ BEGIN
     VARIABLE ws_cnt    :  INTEGER := 0;  --counter of serial clock toggles during half period of word select
   BEGIN
     
-    IF(reset_n = '0') THEN                                           --asynchronous reset
+    IF(reset_n = '1') THEN                                           --asynchronous reset
       sclk_cnt := 0;                                                   --clear mclk/sclk counter
       ws_cnt := 0;                                                     --clear sclk/ws counter
       sclk_int <= '0';                                                 --clear serial clock signal
