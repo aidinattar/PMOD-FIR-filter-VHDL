@@ -1,0 +1,75 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Wed Feb 16 20:55:26 2022
+| Host         : aidin-HP-Laptop-15-bs1xx running 64-bit Ubuntu 21.10
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    10 |
+| Unused register locations in slices containing registers |    31 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            1 |
+|    16+ |            9 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |            1327 |          290 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |             178 |           66 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------+---------------------------------------------+------------------+------------------+----------------+
+|       Clock Signal       |                Enable Signal                | Set/Reset Signal | Slice Load Count | Bel Load Count |
++--------------------------+---------------------------------------------+------------------+------------------+----------------+
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/sd_tx_i_1_n_0             | reset_n_IBUF     |                1 |              1 |
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/l_data_rx_int             | reset_n_IBUF     |               10 |             24 |
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/l_data_tx_int[23]_i_1_n_0 | reset_n_IBUF     |                6 |             24 |
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/r_data_rx_int             | reset_n_IBUF     |               11 |             24 |
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/r_data_tx_int[23]_i_1_n_0 | reset_n_IBUF     |                7 |             24 |
+|  i2s_clock/inst/clk_out1 |                                             | reset_n_IBUF     |                9 |             33 |
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/p_1_in                    | reset_n_IBUF     |                9 |             33 |
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/l_data_rx[23]_i_1_n_0     | reset_n_IBUF     |               22 |             48 |
+| ~ws_OBUF_BUFG[0]         |                                             | rst_r_IBUF       |              143 |            603 |
+|  ws_OBUF_BUFG[0]         |                                             | rst_l_IBUF       |              138 |            691 |
++--------------------------+---------------------------------------------+------------------+------------------+----------------+
+
+
