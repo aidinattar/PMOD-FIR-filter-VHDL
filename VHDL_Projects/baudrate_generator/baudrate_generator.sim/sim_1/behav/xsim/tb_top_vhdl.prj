@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../baudrate_generator.srcs/sources_1/new/top.vhd" \
-"../../../../baudrate_generator.srcs/sim_1/new/tb_top.vhd" \
-
-# Do not sort compile order
-nosort
