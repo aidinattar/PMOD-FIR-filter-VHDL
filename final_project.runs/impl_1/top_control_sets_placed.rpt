@@ -1,0 +1,78 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Tue Feb 15 19:22:19 2022
+| Host         : aidin-HP-Laptop-15-bs1xx running 64-bit Ubuntu 21.10
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    12 |
+| Unused register locations in slices containing registers |    25 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            1 |
+|      8 |            1 |
+|    16+ |           10 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |             477 |          111 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |             178 |           48 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------+---------------------------------------------+---------------------------------------------+------------------+----------------+
+|       Clock Signal       |                Enable Signal                |               Set/Reset Signal              | Slice Load Count | Bel Load Count |
++--------------------------+---------------------------------------------+---------------------------------------------+------------------+----------------+
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/sd_tx_i_1_n_0             | i2s_transceiver_0/l_data_tx_int[15]_i_2_n_0 |                1 |              1 |
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/l_data_tx_int[23]_i_1_n_0 | i2s_transceiver_0/sclk_int_i_3_n_0          |                1 |              8 |
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/l_data_tx_int[23]_i_1_n_0 | i2s_transceiver_0/l_data_tx_int[15]_i_2_n_0 |                3 |             16 |
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/r_data_rx_int_0           | i2s_transceiver_0/l_data_tx_int[15]_i_2_n_0 |                7 |             24 |
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/l_data_rx[23]_i_1_n_0     | i2s_transceiver_0/l_data_tx_int[15]_i_2_n_0 |                7 |             24 |
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/l_data_rx[23]_i_1_n_0     | i2s_transceiver_0/sclk_int_i_3_n_0          |                8 |             24 |
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/l_data_rx_int_1           | i2s_transceiver_0/sclk_int_i_3_n_0          |                9 |             24 |
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/r_data_tx_int[23]_i_1_n_0 | i2s_transceiver_0/sclk_int_i_3_n_0          |                3 |             24 |
+|  i2s_clock/inst/clk_out1 |                                             | i2s_transceiver_0/sclk_int_i_3_n_0          |                9 |             33 |
+|  i2s_clock/inst/clk_out1 | i2s_transceiver_0/p_1_in                    | i2s_transceiver_0/sclk_int_i_3_n_0          |                9 |             33 |
+|  ws_OBUF_BUFG[0]         |                                             | reset_n_IBUF                                |               55 |            222 |
+| ~ws_OBUF_BUFG[0]         |                                             | reset_n_IBUF                                |               47 |            222 |
++--------------------------+---------------------------------------------+---------------------------------------------+------------------+----------------+
+
+

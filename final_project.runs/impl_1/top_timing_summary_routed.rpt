@@ -1,0 +1,1738 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Tue Feb 15 19:23:13 2022
+| Host         : aidin-HP-Laptop-15-bs1xx running 64-bit Ubuntu 21.10
+| Command      : report_timing_summary -max_paths 10 -file top_timing_summary_routed.rpt -pb top_timing_summary_routed.pb -rpx top_timing_summary_routed.rpx -warn_on_violation
+| Design       : top
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  false
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 450 register/latch pins with no clock driven by root clock pin: i2s_transceiver_0/ws_int_reg/Q (HIGH)
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 1030 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 2 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 5 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+     80.969        0.000                      0                  387        0.164        0.000                      0                  387        3.000        0.000                       0                   217  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock                 Waveform(ns)       Period(ns)      Frequency(MHz)
+-----                 ------------       ----------      --------------
+sys_clk_pin           {0.000 5.000}      10.000          100.000         
+  clk_out1_clk_wiz_0  {0.000 44.286}     88.571          11.290          
+  clkfbout_clk_wiz_0  {0.000 10.000}     20.000          50.000          
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock                     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----                     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+sys_clk_pin                                                                                                                                                             3.000        0.000                       0                     1  
+  clk_out1_clk_wiz_0       80.969        0.000                      0                  387        0.164        0.000                      0                  387       43.786        0.000                       0                   213  
+  clkfbout_clk_wiz_0                                                                                                                                                   17.845        0.000                       0                     3  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  sys_clk_pin
+  To Clock:  sys_clk_pin
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        3.000ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         sys_clk_pin
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { CLK100MHZ }
+
+Check Type        Corner  Lib Pin           Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
+Min Period        n/a     PLLE2_ADV/CLKIN1  n/a            1.249         10.000      8.751      PLLE2_ADV_X1Y2  i2s_clock/inst/plle2_adv_inst/CLKIN1
+Max Period        n/a     PLLE2_ADV/CLKIN1  n/a            52.633        10.000      42.633     PLLE2_ADV_X1Y2  i2s_clock/inst/plle2_adv_inst/CLKIN1
+Low Pulse Width   Fast    PLLE2_ADV/CLKIN1  n/a            2.000         5.000       3.000      PLLE2_ADV_X1Y2  i2s_clock/inst/plle2_adv_inst/CLKIN1
+Low Pulse Width   Slow    PLLE2_ADV/CLKIN1  n/a            2.000         5.000       3.000      PLLE2_ADV_X1Y2  i2s_clock/inst/plle2_adv_inst/CLKIN1
+High Pulse Width  Fast    PLLE2_ADV/CLKIN1  n/a            2.000         5.000       3.000      PLLE2_ADV_X1Y2  i2s_clock/inst/plle2_adv_inst/CLKIN1
+High Pulse Width  Slow    PLLE2_ADV/CLKIN1  n/a            2.000         5.000       3.000      PLLE2_ADV_X1Y2  i2s_clock/inst/plle2_adv_inst/CLKIN1
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_out1_clk_wiz_0
+  To Clock:  clk_out1_clk_wiz_0
+
+Setup :            0  Failing Endpoints,  Worst Slack       80.969ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.164ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack       43.786ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             80.969ns  (required time - arrival time)
+  Source:                 i2s_transceiver_0/ws_cnt_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/l_data_rx_int_reg[23]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            88.571ns  (clk_out1_clk_wiz_0 rise@88.571ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        7.305ns  (logic 3.011ns (41.221%)  route 4.294ns (58.779%))
+  Logic Levels:           10  (CARRY4=8 LUT2=1 LUT6=1)
+  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.941ns = ( 86.630 - 88.571 ) 
+    Source Clock Delay      (SCD):    -2.342ns
+    Clock Pessimism Removal (CPR):    -0.414ns
+  Clock Uncertainty:      0.116ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.220ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.253     2.735    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.591    -5.856 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.713    -4.143    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -4.047 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.705    -2.342    i2s_transceiver_0/clk_out1
+    SLICE_X0Y75          FDCE                                         r  i2s_transceiver_0/ws_cnt_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y75          FDCE (Prop_fdce_C_Q)         0.456    -1.886 r  i2s_transceiver_0/ws_cnt_reg[2]/Q
+                         net (fo=4, routed)           0.871    -1.015    i2s_transceiver_0/ws_cnt_reg[2]
+    SLICE_X1Y75          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.674    -0.341 r  i2s_transceiver_0/r_data_rx_int3_carry_i_4/CO[3]
+                         net (fo=1, routed)           0.000    -0.341    i2s_transceiver_0/r_data_rx_int3_carry_i_4_n_0
+    SLICE_X1Y76          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.227 r  i2s_transceiver_0/sd_tx1_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000    -0.227    i2s_transceiver_0/sd_tx1_carry_i_7_n_0
+    SLICE_X1Y77          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.113 r  i2s_transceiver_0/sd_tx1_carry__0_i_6/CO[3]
+                         net (fo=1, routed)           0.000    -0.113    i2s_transceiver_0/sd_tx1_carry__0_i_6_n_0
+    SLICE_X1Y78          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.001 r  i2s_transceiver_0/sd_tx1_carry__0_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.001    i2s_transceiver_0/sd_tx1_carry__0_i_5_n_0
+    SLICE_X1Y79          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.115 r  i2s_transceiver_0/sd_tx1_carry__1_i_6/CO[3]
+                         net (fo=1, routed)           0.000     0.115    i2s_transceiver_0/sd_tx1_carry__1_i_6_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.229 r  i2s_transceiver_0/sd_tx1_carry__1_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.229    i2s_transceiver_0/sd_tx1_carry__1_i_5_n_0
+    SLICE_X1Y81          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     0.563 f  i2s_transceiver_0/sd_tx1_carry__2_i_6/O[1]
+                         net (fo=4, routed)           0.955     1.518    i2s_transceiver_0/ws_cnt0[26]
+    SLICE_X3Y79          LUT2 (Prop_lut2_I0_O)        0.303     1.821 r  i2s_transceiver_0/r_data_rx_int3_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     1.821    i2s_transceiver_0/r_data_rx_int3_carry__2_i_7_n_0
+    SLICE_X3Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     2.371 r  i2s_transceiver_0/r_data_rx_int3_carry__2/CO[3]
+                         net (fo=2, routed)           1.144     3.515    i2s_transceiver_0/r_data_rx_int3
+    SLICE_X5Y80          LUT6 (Prop_lut6_I2_O)        0.124     3.639 r  i2s_transceiver_0/l_data_rx_int[23]_i_1/O
+                         net (fo=24, routed)          1.324     4.963    i2s_transceiver_0/l_data_rx_int_1
+    SLICE_X2Y82          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[23]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     88.571    88.571 r  
+    E3                                                0.000    88.571 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    88.571    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    89.983 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181    91.164    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -7.856    83.308 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.634    84.942    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    85.033 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.597    86.630    i2s_transceiver_0/clk_out1
+    SLICE_X2Y82          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[23]/C
+                         clock pessimism             -0.414    86.217    
+                         clock uncertainty           -0.116    86.101    
+    SLICE_X2Y82          FDCE (Setup_fdce_C_CE)      -0.169    85.932    i2s_transceiver_0/l_data_rx_int_reg[23]
+  -------------------------------------------------------------------
+                         required time                         85.932    
+                         arrival time                          -4.963    
+  -------------------------------------------------------------------
+                         slack                                 80.969    
+
+Slack (MET) :             81.010ns  (required time - arrival time)
+  Source:                 i2s_transceiver_0/ws_cnt_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/r_data_rx_int_reg[19]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            88.571ns  (clk_out1_clk_wiz_0 rise@88.571ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        7.200ns  (logic 2.857ns (39.679%)  route 4.343ns (60.321%))
+  Logic Levels:           11  (CARRY4=9 LUT2=1 LUT6=1)
+  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.952ns = ( 86.619 - 88.571 ) 
+    Source Clock Delay      (SCD):    -2.342ns
+    Clock Pessimism Removal (CPR):    -0.430ns
+  Clock Uncertainty:      0.116ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.220ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.253     2.735    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.591    -5.856 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.713    -4.143    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -4.047 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.705    -2.342    i2s_transceiver_0/clk_out1
+    SLICE_X0Y75          FDCE                                         r  i2s_transceiver_0/ws_cnt_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y75          FDCE (Prop_fdce_C_Q)         0.456    -1.886 r  i2s_transceiver_0/ws_cnt_reg[2]/Q
+                         net (fo=4, routed)           0.871    -1.015    i2s_transceiver_0/ws_cnt_reg[2]
+    SLICE_X1Y75          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.674    -0.341 r  i2s_transceiver_0/r_data_rx_int3_carry_i_4/CO[3]
+                         net (fo=1, routed)           0.000    -0.341    i2s_transceiver_0/r_data_rx_int3_carry_i_4_n_0
+    SLICE_X1Y76          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.227 r  i2s_transceiver_0/sd_tx1_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000    -0.227    i2s_transceiver_0/sd_tx1_carry_i_7_n_0
+    SLICE_X1Y77          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.113 r  i2s_transceiver_0/sd_tx1_carry__0_i_6/CO[3]
+                         net (fo=1, routed)           0.000    -0.113    i2s_transceiver_0/sd_tx1_carry__0_i_6_n_0
+    SLICE_X1Y78          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.001 r  i2s_transceiver_0/sd_tx1_carry__0_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.001    i2s_transceiver_0/sd_tx1_carry__0_i_5_n_0
+    SLICE_X1Y79          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.115 r  i2s_transceiver_0/sd_tx1_carry__1_i_6/CO[3]
+                         net (fo=1, routed)           0.000     0.115    i2s_transceiver_0/sd_tx1_carry__1_i_6_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.229 r  i2s_transceiver_0/sd_tx1_carry__1_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.229    i2s_transceiver_0/sd_tx1_carry__1_i_5_n_0
+    SLICE_X1Y81          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.343 r  i2s_transceiver_0/sd_tx1_carry__2_i_6/CO[3]
+                         net (fo=1, routed)           0.000     0.343    i2s_transceiver_0/sd_tx1_carry__2_i_6_n_0
+    SLICE_X1Y82          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     0.565 f  i2s_transceiver_0/sd_tx1_carry__2_i_1/O[0]
+                         net (fo=4, routed)           1.317     1.882    i2s_transceiver_0/ws_cnt0[29]
+    SLICE_X4Y79          LUT2 (Prop_lut2_I1_O)        0.299     2.181 r  i2s_transceiver_0/i__i_4/O
+                         net (fo=1, routed)           0.000     2.181    i2s_transceiver_0/i__i_4_n_0
+    SLICE_X4Y79          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398     2.579 r  i2s_transceiver_0/i__i_1/CO[3]
+                         net (fo=2, routed)           1.117     3.696    i2s_transceiver_0/r_data_rx_int2
+    SLICE_X5Y80          LUT6 (Prop_lut6_I4_O)        0.124     3.820 r  i2s_transceiver_0/__7/i_/O
+                         net (fo=24, routed)          1.039     4.859    i2s_transceiver_0/r_data_rx_int_0
+    SLICE_X5Y74          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[19]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     88.571    88.571 r  
+    E3                                                0.000    88.571 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    88.571    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    89.983 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181    91.164    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -7.856    83.308 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.634    84.942    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    85.033 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.586    86.619    i2s_transceiver_0/clk_out1
+    SLICE_X5Y74          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[19]/C
+                         clock pessimism             -0.430    86.190    
+                         clock uncertainty           -0.116    86.074    
+    SLICE_X5Y74          FDCE (Setup_fdce_C_CE)      -0.205    85.869    i2s_transceiver_0/r_data_rx_int_reg[19]
+  -------------------------------------------------------------------
+                         required time                         85.869    
+                         arrival time                          -4.859    
+  -------------------------------------------------------------------
+                         slack                                 81.010    
+
+Slack (MET) :             81.122ns  (required time - arrival time)
+  Source:                 i2s_transceiver_0/ws_cnt_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/l_data_rx_int_reg[20]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            88.571ns  (clk_out1_clk_wiz_0 rise@88.571ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        7.115ns  (logic 3.011ns (42.317%)  route 4.104ns (57.683%))
+  Logic Levels:           10  (CARRY4=8 LUT2=1 LUT6=1)
+  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.941ns = ( 86.630 - 88.571 ) 
+    Source Clock Delay      (SCD):    -2.342ns
+    Clock Pessimism Removal (CPR):    -0.414ns
+  Clock Uncertainty:      0.116ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.220ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.253     2.735    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.591    -5.856 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.713    -4.143    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -4.047 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.705    -2.342    i2s_transceiver_0/clk_out1
+    SLICE_X0Y75          FDCE                                         r  i2s_transceiver_0/ws_cnt_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y75          FDCE (Prop_fdce_C_Q)         0.456    -1.886 r  i2s_transceiver_0/ws_cnt_reg[2]/Q
+                         net (fo=4, routed)           0.871    -1.015    i2s_transceiver_0/ws_cnt_reg[2]
+    SLICE_X1Y75          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.674    -0.341 r  i2s_transceiver_0/r_data_rx_int3_carry_i_4/CO[3]
+                         net (fo=1, routed)           0.000    -0.341    i2s_transceiver_0/r_data_rx_int3_carry_i_4_n_0
+    SLICE_X1Y76          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.227 r  i2s_transceiver_0/sd_tx1_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000    -0.227    i2s_transceiver_0/sd_tx1_carry_i_7_n_0
+    SLICE_X1Y77          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.113 r  i2s_transceiver_0/sd_tx1_carry__0_i_6/CO[3]
+                         net (fo=1, routed)           0.000    -0.113    i2s_transceiver_0/sd_tx1_carry__0_i_6_n_0
+    SLICE_X1Y78          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.001 r  i2s_transceiver_0/sd_tx1_carry__0_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.001    i2s_transceiver_0/sd_tx1_carry__0_i_5_n_0
+    SLICE_X1Y79          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.115 r  i2s_transceiver_0/sd_tx1_carry__1_i_6/CO[3]
+                         net (fo=1, routed)           0.000     0.115    i2s_transceiver_0/sd_tx1_carry__1_i_6_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.229 r  i2s_transceiver_0/sd_tx1_carry__1_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.229    i2s_transceiver_0/sd_tx1_carry__1_i_5_n_0
+    SLICE_X1Y81          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     0.563 f  i2s_transceiver_0/sd_tx1_carry__2_i_6/O[1]
+                         net (fo=4, routed)           0.955     1.518    i2s_transceiver_0/ws_cnt0[26]
+    SLICE_X3Y79          LUT2 (Prop_lut2_I0_O)        0.303     1.821 r  i2s_transceiver_0/r_data_rx_int3_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     1.821    i2s_transceiver_0/r_data_rx_int3_carry__2_i_7_n_0
+    SLICE_X3Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     2.371 r  i2s_transceiver_0/r_data_rx_int3_carry__2/CO[3]
+                         net (fo=2, routed)           1.144     3.515    i2s_transceiver_0/r_data_rx_int3
+    SLICE_X5Y80          LUT6 (Prop_lut6_I2_O)        0.124     3.639 r  i2s_transceiver_0/l_data_rx_int[23]_i_1/O
+                         net (fo=24, routed)          1.135     4.774    i2s_transceiver_0/l_data_rx_int_1
+    SLICE_X3Y82          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[20]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     88.571    88.571 r  
+    E3                                                0.000    88.571 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    88.571    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    89.983 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181    91.164    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -7.856    83.308 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.634    84.942    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    85.033 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.597    86.630    i2s_transceiver_0/clk_out1
+    SLICE_X3Y82          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[20]/C
+                         clock pessimism             -0.414    86.217    
+                         clock uncertainty           -0.116    86.101    
+    SLICE_X3Y82          FDCE (Setup_fdce_C_CE)      -0.205    85.896    i2s_transceiver_0/l_data_rx_int_reg[20]
+  -------------------------------------------------------------------
+                         required time                         85.896    
+                         arrival time                          -4.774    
+  -------------------------------------------------------------------
+                         slack                                 81.122    
+
+Slack (MET) :             81.122ns  (required time - arrival time)
+  Source:                 i2s_transceiver_0/ws_cnt_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/l_data_rx_int_reg[21]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            88.571ns  (clk_out1_clk_wiz_0 rise@88.571ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        7.115ns  (logic 3.011ns (42.317%)  route 4.104ns (57.683%))
+  Logic Levels:           10  (CARRY4=8 LUT2=1 LUT6=1)
+  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.941ns = ( 86.630 - 88.571 ) 
+    Source Clock Delay      (SCD):    -2.342ns
+    Clock Pessimism Removal (CPR):    -0.414ns
+  Clock Uncertainty:      0.116ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.220ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.253     2.735    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.591    -5.856 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.713    -4.143    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -4.047 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.705    -2.342    i2s_transceiver_0/clk_out1
+    SLICE_X0Y75          FDCE                                         r  i2s_transceiver_0/ws_cnt_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y75          FDCE (Prop_fdce_C_Q)         0.456    -1.886 r  i2s_transceiver_0/ws_cnt_reg[2]/Q
+                         net (fo=4, routed)           0.871    -1.015    i2s_transceiver_0/ws_cnt_reg[2]
+    SLICE_X1Y75          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.674    -0.341 r  i2s_transceiver_0/r_data_rx_int3_carry_i_4/CO[3]
+                         net (fo=1, routed)           0.000    -0.341    i2s_transceiver_0/r_data_rx_int3_carry_i_4_n_0
+    SLICE_X1Y76          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.227 r  i2s_transceiver_0/sd_tx1_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000    -0.227    i2s_transceiver_0/sd_tx1_carry_i_7_n_0
+    SLICE_X1Y77          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.113 r  i2s_transceiver_0/sd_tx1_carry__0_i_6/CO[3]
+                         net (fo=1, routed)           0.000    -0.113    i2s_transceiver_0/sd_tx1_carry__0_i_6_n_0
+    SLICE_X1Y78          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.001 r  i2s_transceiver_0/sd_tx1_carry__0_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.001    i2s_transceiver_0/sd_tx1_carry__0_i_5_n_0
+    SLICE_X1Y79          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.115 r  i2s_transceiver_0/sd_tx1_carry__1_i_6/CO[3]
+                         net (fo=1, routed)           0.000     0.115    i2s_transceiver_0/sd_tx1_carry__1_i_6_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.229 r  i2s_transceiver_0/sd_tx1_carry__1_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.229    i2s_transceiver_0/sd_tx1_carry__1_i_5_n_0
+    SLICE_X1Y81          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     0.563 f  i2s_transceiver_0/sd_tx1_carry__2_i_6/O[1]
+                         net (fo=4, routed)           0.955     1.518    i2s_transceiver_0/ws_cnt0[26]
+    SLICE_X3Y79          LUT2 (Prop_lut2_I0_O)        0.303     1.821 r  i2s_transceiver_0/r_data_rx_int3_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     1.821    i2s_transceiver_0/r_data_rx_int3_carry__2_i_7_n_0
+    SLICE_X3Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     2.371 r  i2s_transceiver_0/r_data_rx_int3_carry__2/CO[3]
+                         net (fo=2, routed)           1.144     3.515    i2s_transceiver_0/r_data_rx_int3
+    SLICE_X5Y80          LUT6 (Prop_lut6_I2_O)        0.124     3.639 r  i2s_transceiver_0/l_data_rx_int[23]_i_1/O
+                         net (fo=24, routed)          1.135     4.774    i2s_transceiver_0/l_data_rx_int_1
+    SLICE_X3Y82          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[21]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     88.571    88.571 r  
+    E3                                                0.000    88.571 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    88.571    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    89.983 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181    91.164    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -7.856    83.308 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.634    84.942    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    85.033 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.597    86.630    i2s_transceiver_0/clk_out1
+    SLICE_X3Y82          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[21]/C
+                         clock pessimism             -0.414    86.217    
+                         clock uncertainty           -0.116    86.101    
+    SLICE_X3Y82          FDCE (Setup_fdce_C_CE)      -0.205    85.896    i2s_transceiver_0/l_data_rx_int_reg[21]
+  -------------------------------------------------------------------
+                         required time                         85.896    
+                         arrival time                          -4.774    
+  -------------------------------------------------------------------
+                         slack                                 81.122    
+
+Slack (MET) :             81.122ns  (required time - arrival time)
+  Source:                 i2s_transceiver_0/ws_cnt_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/l_data_rx_int_reg[22]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            88.571ns  (clk_out1_clk_wiz_0 rise@88.571ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        7.115ns  (logic 3.011ns (42.317%)  route 4.104ns (57.683%))
+  Logic Levels:           10  (CARRY4=8 LUT2=1 LUT6=1)
+  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.941ns = ( 86.630 - 88.571 ) 
+    Source Clock Delay      (SCD):    -2.342ns
+    Clock Pessimism Removal (CPR):    -0.414ns
+  Clock Uncertainty:      0.116ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.220ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.253     2.735    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.591    -5.856 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.713    -4.143    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -4.047 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.705    -2.342    i2s_transceiver_0/clk_out1
+    SLICE_X0Y75          FDCE                                         r  i2s_transceiver_0/ws_cnt_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y75          FDCE (Prop_fdce_C_Q)         0.456    -1.886 r  i2s_transceiver_0/ws_cnt_reg[2]/Q
+                         net (fo=4, routed)           0.871    -1.015    i2s_transceiver_0/ws_cnt_reg[2]
+    SLICE_X1Y75          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.674    -0.341 r  i2s_transceiver_0/r_data_rx_int3_carry_i_4/CO[3]
+                         net (fo=1, routed)           0.000    -0.341    i2s_transceiver_0/r_data_rx_int3_carry_i_4_n_0
+    SLICE_X1Y76          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.227 r  i2s_transceiver_0/sd_tx1_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000    -0.227    i2s_transceiver_0/sd_tx1_carry_i_7_n_0
+    SLICE_X1Y77          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.113 r  i2s_transceiver_0/sd_tx1_carry__0_i_6/CO[3]
+                         net (fo=1, routed)           0.000    -0.113    i2s_transceiver_0/sd_tx1_carry__0_i_6_n_0
+    SLICE_X1Y78          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.001 r  i2s_transceiver_0/sd_tx1_carry__0_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.001    i2s_transceiver_0/sd_tx1_carry__0_i_5_n_0
+    SLICE_X1Y79          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.115 r  i2s_transceiver_0/sd_tx1_carry__1_i_6/CO[3]
+                         net (fo=1, routed)           0.000     0.115    i2s_transceiver_0/sd_tx1_carry__1_i_6_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.229 r  i2s_transceiver_0/sd_tx1_carry__1_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.229    i2s_transceiver_0/sd_tx1_carry__1_i_5_n_0
+    SLICE_X1Y81          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     0.563 f  i2s_transceiver_0/sd_tx1_carry__2_i_6/O[1]
+                         net (fo=4, routed)           0.955     1.518    i2s_transceiver_0/ws_cnt0[26]
+    SLICE_X3Y79          LUT2 (Prop_lut2_I0_O)        0.303     1.821 r  i2s_transceiver_0/r_data_rx_int3_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     1.821    i2s_transceiver_0/r_data_rx_int3_carry__2_i_7_n_0
+    SLICE_X3Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     2.371 r  i2s_transceiver_0/r_data_rx_int3_carry__2/CO[3]
+                         net (fo=2, routed)           1.144     3.515    i2s_transceiver_0/r_data_rx_int3
+    SLICE_X5Y80          LUT6 (Prop_lut6_I2_O)        0.124     3.639 r  i2s_transceiver_0/l_data_rx_int[23]_i_1/O
+                         net (fo=24, routed)          1.135     4.774    i2s_transceiver_0/l_data_rx_int_1
+    SLICE_X3Y82          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[22]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     88.571    88.571 r  
+    E3                                                0.000    88.571 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    88.571    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    89.983 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181    91.164    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -7.856    83.308 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.634    84.942    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    85.033 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.597    86.630    i2s_transceiver_0/clk_out1
+    SLICE_X3Y82          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[22]/C
+                         clock pessimism             -0.414    86.217    
+                         clock uncertainty           -0.116    86.101    
+    SLICE_X3Y82          FDCE (Setup_fdce_C_CE)      -0.205    85.896    i2s_transceiver_0/l_data_rx_int_reg[22]
+  -------------------------------------------------------------------
+                         required time                         85.896    
+                         arrival time                          -4.774    
+  -------------------------------------------------------------------
+                         slack                                 81.122    
+
+Slack (MET) :             81.172ns  (required time - arrival time)
+  Source:                 i2s_transceiver_0/ws_cnt_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/l_data_rx_int_reg[8]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            88.571ns  (clk_out1_clk_wiz_0 rise@88.571ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        7.092ns  (logic 3.011ns (42.454%)  route 4.081ns (57.546%))
+  Logic Levels:           10  (CARRY4=8 LUT2=1 LUT6=1)
+  Clock Path Skew:        -0.022ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.950ns = ( 86.621 - 88.571 ) 
+    Source Clock Delay      (SCD):    -2.342ns
+    Clock Pessimism Removal (CPR):    -0.414ns
+  Clock Uncertainty:      0.116ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.220ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.253     2.735    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.591    -5.856 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.713    -4.143    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -4.047 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.705    -2.342    i2s_transceiver_0/clk_out1
+    SLICE_X0Y75          FDCE                                         r  i2s_transceiver_0/ws_cnt_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y75          FDCE (Prop_fdce_C_Q)         0.456    -1.886 r  i2s_transceiver_0/ws_cnt_reg[2]/Q
+                         net (fo=4, routed)           0.871    -1.015    i2s_transceiver_0/ws_cnt_reg[2]
+    SLICE_X1Y75          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.674    -0.341 r  i2s_transceiver_0/r_data_rx_int3_carry_i_4/CO[3]
+                         net (fo=1, routed)           0.000    -0.341    i2s_transceiver_0/r_data_rx_int3_carry_i_4_n_0
+    SLICE_X1Y76          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.227 r  i2s_transceiver_0/sd_tx1_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000    -0.227    i2s_transceiver_0/sd_tx1_carry_i_7_n_0
+    SLICE_X1Y77          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.113 r  i2s_transceiver_0/sd_tx1_carry__0_i_6/CO[3]
+                         net (fo=1, routed)           0.000    -0.113    i2s_transceiver_0/sd_tx1_carry__0_i_6_n_0
+    SLICE_X1Y78          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.001 r  i2s_transceiver_0/sd_tx1_carry__0_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.001    i2s_transceiver_0/sd_tx1_carry__0_i_5_n_0
+    SLICE_X1Y79          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.115 r  i2s_transceiver_0/sd_tx1_carry__1_i_6/CO[3]
+                         net (fo=1, routed)           0.000     0.115    i2s_transceiver_0/sd_tx1_carry__1_i_6_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.229 r  i2s_transceiver_0/sd_tx1_carry__1_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.229    i2s_transceiver_0/sd_tx1_carry__1_i_5_n_0
+    SLICE_X1Y81          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     0.563 f  i2s_transceiver_0/sd_tx1_carry__2_i_6/O[1]
+                         net (fo=4, routed)           0.955     1.518    i2s_transceiver_0/ws_cnt0[26]
+    SLICE_X3Y79          LUT2 (Prop_lut2_I0_O)        0.303     1.821 r  i2s_transceiver_0/r_data_rx_int3_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     1.821    i2s_transceiver_0/r_data_rx_int3_carry__2_i_7_n_0
+    SLICE_X3Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     2.371 r  i2s_transceiver_0/r_data_rx_int3_carry__2/CO[3]
+                         net (fo=2, routed)           1.144     3.515    i2s_transceiver_0/r_data_rx_int3
+    SLICE_X5Y80          LUT6 (Prop_lut6_I2_O)        0.124     3.639 r  i2s_transceiver_0/l_data_rx_int[23]_i_1/O
+                         net (fo=24, routed)          1.112     4.751    i2s_transceiver_0/l_data_rx_int_1
+    SLICE_X2Y75          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[8]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     88.571    88.571 r  
+    E3                                                0.000    88.571 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    88.571    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    89.983 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181    91.164    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -7.856    83.308 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.634    84.942    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    85.033 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.588    86.621    i2s_transceiver_0/clk_out1
+    SLICE_X2Y75          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[8]/C
+                         clock pessimism             -0.414    86.208    
+                         clock uncertainty           -0.116    86.092    
+    SLICE_X2Y75          FDCE (Setup_fdce_C_CE)      -0.169    85.923    i2s_transceiver_0/l_data_rx_int_reg[8]
+  -------------------------------------------------------------------
+                         required time                         85.923    
+                         arrival time                          -4.751    
+  -------------------------------------------------------------------
+                         slack                                 81.172    
+
+Slack (MET) :             81.172ns  (required time - arrival time)
+  Source:                 i2s_transceiver_0/ws_cnt_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/l_data_rx_int_reg[9]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            88.571ns  (clk_out1_clk_wiz_0 rise@88.571ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        7.092ns  (logic 3.011ns (42.454%)  route 4.081ns (57.546%))
+  Logic Levels:           10  (CARRY4=8 LUT2=1 LUT6=1)
+  Clock Path Skew:        -0.022ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.950ns = ( 86.621 - 88.571 ) 
+    Source Clock Delay      (SCD):    -2.342ns
+    Clock Pessimism Removal (CPR):    -0.414ns
+  Clock Uncertainty:      0.116ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.220ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.253     2.735    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.591    -5.856 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.713    -4.143    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -4.047 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.705    -2.342    i2s_transceiver_0/clk_out1
+    SLICE_X0Y75          FDCE                                         r  i2s_transceiver_0/ws_cnt_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y75          FDCE (Prop_fdce_C_Q)         0.456    -1.886 r  i2s_transceiver_0/ws_cnt_reg[2]/Q
+                         net (fo=4, routed)           0.871    -1.015    i2s_transceiver_0/ws_cnt_reg[2]
+    SLICE_X1Y75          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.674    -0.341 r  i2s_transceiver_0/r_data_rx_int3_carry_i_4/CO[3]
+                         net (fo=1, routed)           0.000    -0.341    i2s_transceiver_0/r_data_rx_int3_carry_i_4_n_0
+    SLICE_X1Y76          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.227 r  i2s_transceiver_0/sd_tx1_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000    -0.227    i2s_transceiver_0/sd_tx1_carry_i_7_n_0
+    SLICE_X1Y77          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.113 r  i2s_transceiver_0/sd_tx1_carry__0_i_6/CO[3]
+                         net (fo=1, routed)           0.000    -0.113    i2s_transceiver_0/sd_tx1_carry__0_i_6_n_0
+    SLICE_X1Y78          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.001 r  i2s_transceiver_0/sd_tx1_carry__0_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.001    i2s_transceiver_0/sd_tx1_carry__0_i_5_n_0
+    SLICE_X1Y79          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.115 r  i2s_transceiver_0/sd_tx1_carry__1_i_6/CO[3]
+                         net (fo=1, routed)           0.000     0.115    i2s_transceiver_0/sd_tx1_carry__1_i_6_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.229 r  i2s_transceiver_0/sd_tx1_carry__1_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.229    i2s_transceiver_0/sd_tx1_carry__1_i_5_n_0
+    SLICE_X1Y81          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     0.563 f  i2s_transceiver_0/sd_tx1_carry__2_i_6/O[1]
+                         net (fo=4, routed)           0.955     1.518    i2s_transceiver_0/ws_cnt0[26]
+    SLICE_X3Y79          LUT2 (Prop_lut2_I0_O)        0.303     1.821 r  i2s_transceiver_0/r_data_rx_int3_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     1.821    i2s_transceiver_0/r_data_rx_int3_carry__2_i_7_n_0
+    SLICE_X3Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     2.371 r  i2s_transceiver_0/r_data_rx_int3_carry__2/CO[3]
+                         net (fo=2, routed)           1.144     3.515    i2s_transceiver_0/r_data_rx_int3
+    SLICE_X5Y80          LUT6 (Prop_lut6_I2_O)        0.124     3.639 r  i2s_transceiver_0/l_data_rx_int[23]_i_1/O
+                         net (fo=24, routed)          1.112     4.751    i2s_transceiver_0/l_data_rx_int_1
+    SLICE_X2Y75          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[9]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     88.571    88.571 r  
+    E3                                                0.000    88.571 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    88.571    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    89.983 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181    91.164    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -7.856    83.308 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.634    84.942    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    85.033 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.588    86.621    i2s_transceiver_0/clk_out1
+    SLICE_X2Y75          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[9]/C
+                         clock pessimism             -0.414    86.208    
+                         clock uncertainty           -0.116    86.092    
+    SLICE_X2Y75          FDCE (Setup_fdce_C_CE)      -0.169    85.923    i2s_transceiver_0/l_data_rx_int_reg[9]
+  -------------------------------------------------------------------
+                         required time                         85.923    
+                         arrival time                          -4.751    
+  -------------------------------------------------------------------
+                         slack                                 81.172    
+
+Slack (MET) :             81.214ns  (required time - arrival time)
+  Source:                 i2s_transceiver_0/ws_cnt_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/r_data_rx_int_reg[12]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            88.571ns  (clk_out1_clk_wiz_0 rise@88.571ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        7.036ns  (logic 2.857ns (40.606%)  route 4.179ns (59.394%))
+  Logic Levels:           11  (CARRY4=9 LUT2=1 LUT6=1)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.949ns = ( 86.622 - 88.571 ) 
+    Source Clock Delay      (SCD):    -2.342ns
+    Clock Pessimism Removal (CPR):    -0.430ns
+  Clock Uncertainty:      0.116ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.220ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.253     2.735    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.591    -5.856 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.713    -4.143    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -4.047 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.705    -2.342    i2s_transceiver_0/clk_out1
+    SLICE_X0Y75          FDCE                                         r  i2s_transceiver_0/ws_cnt_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y75          FDCE (Prop_fdce_C_Q)         0.456    -1.886 r  i2s_transceiver_0/ws_cnt_reg[2]/Q
+                         net (fo=4, routed)           0.871    -1.015    i2s_transceiver_0/ws_cnt_reg[2]
+    SLICE_X1Y75          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.674    -0.341 r  i2s_transceiver_0/r_data_rx_int3_carry_i_4/CO[3]
+                         net (fo=1, routed)           0.000    -0.341    i2s_transceiver_0/r_data_rx_int3_carry_i_4_n_0
+    SLICE_X1Y76          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.227 r  i2s_transceiver_0/sd_tx1_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000    -0.227    i2s_transceiver_0/sd_tx1_carry_i_7_n_0
+    SLICE_X1Y77          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.113 r  i2s_transceiver_0/sd_tx1_carry__0_i_6/CO[3]
+                         net (fo=1, routed)           0.000    -0.113    i2s_transceiver_0/sd_tx1_carry__0_i_6_n_0
+    SLICE_X1Y78          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.001 r  i2s_transceiver_0/sd_tx1_carry__0_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.001    i2s_transceiver_0/sd_tx1_carry__0_i_5_n_0
+    SLICE_X1Y79          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.115 r  i2s_transceiver_0/sd_tx1_carry__1_i_6/CO[3]
+                         net (fo=1, routed)           0.000     0.115    i2s_transceiver_0/sd_tx1_carry__1_i_6_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.229 r  i2s_transceiver_0/sd_tx1_carry__1_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.229    i2s_transceiver_0/sd_tx1_carry__1_i_5_n_0
+    SLICE_X1Y81          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.343 r  i2s_transceiver_0/sd_tx1_carry__2_i_6/CO[3]
+                         net (fo=1, routed)           0.000     0.343    i2s_transceiver_0/sd_tx1_carry__2_i_6_n_0
+    SLICE_X1Y82          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     0.565 f  i2s_transceiver_0/sd_tx1_carry__2_i_1/O[0]
+                         net (fo=4, routed)           1.317     1.882    i2s_transceiver_0/ws_cnt0[29]
+    SLICE_X4Y79          LUT2 (Prop_lut2_I1_O)        0.299     2.181 r  i2s_transceiver_0/i__i_4/O
+                         net (fo=1, routed)           0.000     2.181    i2s_transceiver_0/i__i_4_n_0
+    SLICE_X4Y79          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398     2.579 r  i2s_transceiver_0/i__i_1/CO[3]
+                         net (fo=2, routed)           1.117     3.696    i2s_transceiver_0/r_data_rx_int2
+    SLICE_X5Y80          LUT6 (Prop_lut6_I4_O)        0.124     3.820 r  i2s_transceiver_0/__7/i_/O
+                         net (fo=24, routed)          0.875     4.694    i2s_transceiver_0/r_data_rx_int_0
+    SLICE_X6Y72          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[12]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     88.571    88.571 r  
+    E3                                                0.000    88.571 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    88.571    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    89.983 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181    91.164    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -7.856    83.308 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.634    84.942    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    85.033 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.589    86.622    i2s_transceiver_0/clk_out1
+    SLICE_X6Y72          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[12]/C
+                         clock pessimism             -0.430    86.193    
+                         clock uncertainty           -0.116    86.077    
+    SLICE_X6Y72          FDCE (Setup_fdce_C_CE)      -0.169    85.908    i2s_transceiver_0/r_data_rx_int_reg[12]
+  -------------------------------------------------------------------
+                         required time                         85.908    
+                         arrival time                          -4.694    
+  -------------------------------------------------------------------
+                         slack                                 81.214    
+
+Slack (MET) :             81.214ns  (required time - arrival time)
+  Source:                 i2s_transceiver_0/ws_cnt_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/r_data_rx_int_reg[17]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            88.571ns  (clk_out1_clk_wiz_0 rise@88.571ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        7.036ns  (logic 2.857ns (40.606%)  route 4.179ns (59.394%))
+  Logic Levels:           11  (CARRY4=9 LUT2=1 LUT6=1)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.949ns = ( 86.622 - 88.571 ) 
+    Source Clock Delay      (SCD):    -2.342ns
+    Clock Pessimism Removal (CPR):    -0.430ns
+  Clock Uncertainty:      0.116ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.220ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.253     2.735    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.591    -5.856 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.713    -4.143    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -4.047 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.705    -2.342    i2s_transceiver_0/clk_out1
+    SLICE_X0Y75          FDCE                                         r  i2s_transceiver_0/ws_cnt_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y75          FDCE (Prop_fdce_C_Q)         0.456    -1.886 r  i2s_transceiver_0/ws_cnt_reg[2]/Q
+                         net (fo=4, routed)           0.871    -1.015    i2s_transceiver_0/ws_cnt_reg[2]
+    SLICE_X1Y75          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.674    -0.341 r  i2s_transceiver_0/r_data_rx_int3_carry_i_4/CO[3]
+                         net (fo=1, routed)           0.000    -0.341    i2s_transceiver_0/r_data_rx_int3_carry_i_4_n_0
+    SLICE_X1Y76          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.227 r  i2s_transceiver_0/sd_tx1_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000    -0.227    i2s_transceiver_0/sd_tx1_carry_i_7_n_0
+    SLICE_X1Y77          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.113 r  i2s_transceiver_0/sd_tx1_carry__0_i_6/CO[3]
+                         net (fo=1, routed)           0.000    -0.113    i2s_transceiver_0/sd_tx1_carry__0_i_6_n_0
+    SLICE_X1Y78          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.001 r  i2s_transceiver_0/sd_tx1_carry__0_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.001    i2s_transceiver_0/sd_tx1_carry__0_i_5_n_0
+    SLICE_X1Y79          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.115 r  i2s_transceiver_0/sd_tx1_carry__1_i_6/CO[3]
+                         net (fo=1, routed)           0.000     0.115    i2s_transceiver_0/sd_tx1_carry__1_i_6_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.229 r  i2s_transceiver_0/sd_tx1_carry__1_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.229    i2s_transceiver_0/sd_tx1_carry__1_i_5_n_0
+    SLICE_X1Y81          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.343 r  i2s_transceiver_0/sd_tx1_carry__2_i_6/CO[3]
+                         net (fo=1, routed)           0.000     0.343    i2s_transceiver_0/sd_tx1_carry__2_i_6_n_0
+    SLICE_X1Y82          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     0.565 f  i2s_transceiver_0/sd_tx1_carry__2_i_1/O[0]
+                         net (fo=4, routed)           1.317     1.882    i2s_transceiver_0/ws_cnt0[29]
+    SLICE_X4Y79          LUT2 (Prop_lut2_I1_O)        0.299     2.181 r  i2s_transceiver_0/i__i_4/O
+                         net (fo=1, routed)           0.000     2.181    i2s_transceiver_0/i__i_4_n_0
+    SLICE_X4Y79          CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398     2.579 r  i2s_transceiver_0/i__i_1/CO[3]
+                         net (fo=2, routed)           1.117     3.696    i2s_transceiver_0/r_data_rx_int2
+    SLICE_X5Y80          LUT6 (Prop_lut6_I4_O)        0.124     3.820 r  i2s_transceiver_0/__7/i_/O
+                         net (fo=24, routed)          0.875     4.694    i2s_transceiver_0/r_data_rx_int_0
+    SLICE_X6Y72          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[17]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     88.571    88.571 r  
+    E3                                                0.000    88.571 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    88.571    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    89.983 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181    91.164    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -7.856    83.308 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.634    84.942    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    85.033 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.589    86.622    i2s_transceiver_0/clk_out1
+    SLICE_X6Y72          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[17]/C
+                         clock pessimism             -0.430    86.193    
+                         clock uncertainty           -0.116    86.077    
+    SLICE_X6Y72          FDCE (Setup_fdce_C_CE)      -0.169    85.908    i2s_transceiver_0/r_data_rx_int_reg[17]
+  -------------------------------------------------------------------
+                         required time                         85.908    
+                         arrival time                          -4.694    
+  -------------------------------------------------------------------
+                         slack                                 81.214    
+
+Slack (MET) :             81.272ns  (required time - arrival time)
+  Source:                 i2s_transceiver_0/ws_cnt_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/l_data_rx_int_reg[0]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            88.571ns  (clk_out1_clk_wiz_0 rise@88.571ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        6.956ns  (logic 3.011ns (43.284%)  route 3.945ns (56.716%))
+  Logic Levels:           10  (CARRY4=8 LUT2=1 LUT6=1)
+  Clock Path Skew:        -0.022ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.950ns = ( 86.621 - 88.571 ) 
+    Source Clock Delay      (SCD):    -2.342ns
+    Clock Pessimism Removal (CPR):    -0.414ns
+  Clock Uncertainty:      0.116ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.220ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.253     2.735    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -8.591    -5.856 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.713    -4.143    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -4.047 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.705    -2.342    i2s_transceiver_0/clk_out1
+    SLICE_X0Y75          FDCE                                         r  i2s_transceiver_0/ws_cnt_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y75          FDCE (Prop_fdce_C_Q)         0.456    -1.886 r  i2s_transceiver_0/ws_cnt_reg[2]/Q
+                         net (fo=4, routed)           0.871    -1.015    i2s_transceiver_0/ws_cnt_reg[2]
+    SLICE_X1Y75          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.674    -0.341 r  i2s_transceiver_0/r_data_rx_int3_carry_i_4/CO[3]
+                         net (fo=1, routed)           0.000    -0.341    i2s_transceiver_0/r_data_rx_int3_carry_i_4_n_0
+    SLICE_X1Y76          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.227 r  i2s_transceiver_0/sd_tx1_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000    -0.227    i2s_transceiver_0/sd_tx1_carry_i_7_n_0
+    SLICE_X1Y77          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    -0.113 r  i2s_transceiver_0/sd_tx1_carry__0_i_6/CO[3]
+                         net (fo=1, routed)           0.000    -0.113    i2s_transceiver_0/sd_tx1_carry__0_i_6_n_0
+    SLICE_X1Y78          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.001 r  i2s_transceiver_0/sd_tx1_carry__0_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.001    i2s_transceiver_0/sd_tx1_carry__0_i_5_n_0
+    SLICE_X1Y79          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.115 r  i2s_transceiver_0/sd_tx1_carry__1_i_6/CO[3]
+                         net (fo=1, routed)           0.000     0.115    i2s_transceiver_0/sd_tx1_carry__1_i_6_n_0
+    SLICE_X1Y80          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.229 r  i2s_transceiver_0/sd_tx1_carry__1_i_5/CO[3]
+                         net (fo=1, routed)           0.000     0.229    i2s_transceiver_0/sd_tx1_carry__1_i_5_n_0
+    SLICE_X1Y81          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     0.563 f  i2s_transceiver_0/sd_tx1_carry__2_i_6/O[1]
+                         net (fo=4, routed)           0.955     1.518    i2s_transceiver_0/ws_cnt0[26]
+    SLICE_X3Y79          LUT2 (Prop_lut2_I0_O)        0.303     1.821 r  i2s_transceiver_0/r_data_rx_int3_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     1.821    i2s_transceiver_0/r_data_rx_int3_carry__2_i_7_n_0
+    SLICE_X3Y79          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     2.371 r  i2s_transceiver_0/r_data_rx_int3_carry__2/CO[3]
+                         net (fo=2, routed)           1.144     3.515    i2s_transceiver_0/r_data_rx_int3
+    SLICE_X5Y80          LUT6 (Prop_lut6_I2_O)        0.124     3.639 r  i2s_transceiver_0/l_data_rx_int[23]_i_1/O
+                         net (fo=24, routed)          0.976     4.615    i2s_transceiver_0/l_data_rx_int_1
+    SLICE_X1Y75          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[0]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     88.571    88.571 r  
+    E3                                                0.000    88.571 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    88.571    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    89.983 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.181    91.164    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -7.856    83.308 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.634    84.942    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    85.033 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         1.588    86.621    i2s_transceiver_0/clk_out1
+    SLICE_X1Y75          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[0]/C
+                         clock pessimism             -0.414    86.208    
+                         clock uncertainty           -0.116    86.092    
+    SLICE_X1Y75          FDCE (Setup_fdce_C_CE)      -0.205    85.887    i2s_transceiver_0/l_data_rx_int_reg[0]
+  -------------------------------------------------------------------
+                         required time                         85.887    
+                         arrival time                          -4.615    
+  -------------------------------------------------------------------
+                         slack                                 81.272    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.164ns  (arrival time - required time)
+  Source:                 i2s_transceiver_0/r_data_rx_int_reg[11]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/r_data_rx_reg[11]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.254ns  (logic 0.141ns (55.425%)  route 0.113ns (44.575%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.014ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.290ns
+    Source Clock Delay      (SCD):    -0.519ns
+    Clock Pessimism Removal (CPR):    0.215ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.690    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.342    -1.652 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.514    -1.138    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.112 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.593    -0.519    i2s_transceiver_0/clk_out1
+    SLICE_X4Y72          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[11]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y72          FDCE (Prop_fdce_C_Q)         0.141    -0.378 r  i2s_transceiver_0/r_data_rx_int_reg[11]/Q
+                         net (fo=2, routed)           0.113    -0.265    i2s_transceiver_0/r_data_rx_int[11]
+    SLICE_X6Y71          FDCE                                         r  i2s_transceiver_0/r_data_rx_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.919    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.659    -1.740 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.560    -1.181    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.152 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.862    -0.290    i2s_transceiver_0/clk_out1
+    SLICE_X6Y71          FDCE                                         r  i2s_transceiver_0/r_data_rx_reg[11]/C
+                         clock pessimism             -0.215    -0.505    
+    SLICE_X6Y71          FDCE (Hold_fdce_C_D)         0.076    -0.429    i2s_transceiver_0/r_data_rx_reg[11]
+  -------------------------------------------------------------------
+                         required time                          0.429    
+                         arrival time                          -0.265    
+  -------------------------------------------------------------------
+                         slack                                  0.164    
+
+Slack (MET) :             0.168ns  (arrival time - required time)
+  Source:                 i2s_transceiver_0/l_data_rx_int_reg[19]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/l_data_rx_int_reg[20]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.253ns  (logic 0.141ns (55.746%)  route 0.112ns (44.254%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.283ns
+    Source Clock Delay      (SCD):    -0.515ns
+    Clock Pessimism Removal (CPR):    0.217ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.690    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.342    -1.652 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.514    -1.138    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.112 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.597    -0.515    i2s_transceiver_0/clk_out1
+    SLICE_X1Y81          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[19]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y81          FDCE (Prop_fdce_C_Q)         0.141    -0.374 r  i2s_transceiver_0/l_data_rx_int_reg[19]/Q
+                         net (fo=2, routed)           0.112    -0.262    i2s_transceiver_0/l_data_rx_int[19]
+    SLICE_X3Y82          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[20]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.919    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.659    -1.740 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.560    -1.181    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.152 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.869    -0.283    i2s_transceiver_0/clk_out1
+    SLICE_X3Y82          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[20]/C
+                         clock pessimism             -0.217    -0.500    
+    SLICE_X3Y82          FDCE (Hold_fdce_C_D)         0.070    -0.430    i2s_transceiver_0/l_data_rx_int_reg[20]
+  -------------------------------------------------------------------
+                         required time                          0.430    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  0.168    
+
+Slack (MET) :             0.170ns  (arrival time - required time)
+  Source:                 i2s_transceiver_0/l_data_rx_int_reg[4]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/l_data_rx_reg[4]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.255ns  (logic 0.141ns (55.264%)  route 0.114ns (44.736%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.288ns
+    Source Clock Delay      (SCD):    -0.520ns
+    Clock Pessimism Removal (CPR):    0.217ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.690    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.342    -1.652 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.514    -1.138    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.112 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.592    -0.520    i2s_transceiver_0/clk_out1
+    SLICE_X1Y76          FDCE                                         r  i2s_transceiver_0/l_data_rx_int_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y76          FDCE (Prop_fdce_C_Q)         0.141    -0.379 r  i2s_transceiver_0/l_data_rx_int_reg[4]/Q
+                         net (fo=2, routed)           0.114    -0.265    i2s_transceiver_0/l_data_rx_int[4]
+    SLICE_X3Y77          FDCE                                         r  i2s_transceiver_0/l_data_rx_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.919    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.659    -1.740 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.560    -1.181    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.152 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.864    -0.288    i2s_transceiver_0/clk_out1
+    SLICE_X3Y77          FDCE                                         r  i2s_transceiver_0/l_data_rx_reg[4]/C
+                         clock pessimism             -0.217    -0.505    
+    SLICE_X3Y77          FDCE (Hold_fdce_C_D)         0.070    -0.435    i2s_transceiver_0/l_data_rx_reg[4]
+  -------------------------------------------------------------------
+                         required time                          0.435    
+                         arrival time                          -0.265    
+  -------------------------------------------------------------------
+                         slack                                  0.170    
+
+Slack (MET) :             0.177ns  (arrival time - required time)
+  Source:                 i2s_transceiver_0/r_data_rx_int_reg[19]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/r_data_rx_int_reg[20]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.254ns  (logic 0.141ns (55.481%)  route 0.113ns (44.519%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.014ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.293ns
+    Source Clock Delay      (SCD):    -0.522ns
+    Clock Pessimism Removal (CPR):    0.215ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.690    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.342    -1.652 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.514    -1.138    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.112 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.590    -0.522    i2s_transceiver_0/clk_out1
+    SLICE_X5Y74          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[19]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y74          FDCE (Prop_fdce_C_Q)         0.141    -0.381 r  i2s_transceiver_0/r_data_rx_int_reg[19]/Q
+                         net (fo=2, routed)           0.113    -0.268    i2s_transceiver_0/r_data_rx_int[19]
+    SLICE_X6Y73          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[20]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.919    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.659    -1.740 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.560    -1.181    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.152 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.859    -0.293    i2s_transceiver_0/clk_out1
+    SLICE_X6Y73          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[20]/C
+                         clock pessimism             -0.215    -0.508    
+    SLICE_X6Y73          FDCE (Hold_fdce_C_D)         0.063    -0.445    i2s_transceiver_0/r_data_rx_int_reg[20]
+  -------------------------------------------------------------------
+                         required time                          0.445    
+                         arrival time                          -0.268    
+  -------------------------------------------------------------------
+                         slack                                  0.177    
+
+Slack (MET) :             0.181ns  (arrival time - required time)
+  Source:                 i2s_transceiver_0/r_data_rx_int_reg[18]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/r_data_rx_int_reg[19]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.263ns  (logic 0.141ns (53.626%)  route 0.122ns (46.374%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.012ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.294ns
+    Source Clock Delay      (SCD):    -0.521ns
+    Clock Pessimism Removal (CPR):    0.215ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.690    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.342    -1.652 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.514    -1.138    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.112 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.591    -0.521    i2s_transceiver_0/clk_out1
+    SLICE_X5Y73          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[18]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y73          FDCE (Prop_fdce_C_Q)         0.141    -0.380 r  i2s_transceiver_0/r_data_rx_int_reg[18]/Q
+                         net (fo=2, routed)           0.122    -0.258    i2s_transceiver_0/r_data_rx_int[18]
+    SLICE_X5Y74          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[19]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.919    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.659    -1.740 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.560    -1.181    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.152 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.858    -0.294    i2s_transceiver_0/clk_out1
+    SLICE_X5Y74          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[19]/C
+                         clock pessimism             -0.215    -0.509    
+    SLICE_X5Y74          FDCE (Hold_fdce_C_D)         0.070    -0.439    i2s_transceiver_0/r_data_rx_int_reg[19]
+  -------------------------------------------------------------------
+                         required time                          0.439    
+                         arrival time                          -0.258    
+  -------------------------------------------------------------------
+                         slack                                  0.181    
+
+Slack (MET) :             0.181ns  (arrival time - required time)
+  Source:                 i2s_transceiver_0/r_data_rx_int_reg[6]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/r_data_rx_reg[6]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.266ns  (logic 0.141ns (52.997%)  route 0.125ns (47.003%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.289ns
+    Source Clock Delay      (SCD):    -0.519ns
+    Clock Pessimism Removal (CPR):    0.215ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.690    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.342    -1.652 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.514    -1.138    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.112 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.593    -0.519    i2s_transceiver_0/clk_out1
+    SLICE_X4Y71          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y71          FDCE (Prop_fdce_C_Q)         0.141    -0.378 r  i2s_transceiver_0/r_data_rx_int_reg[6]/Q
+                         net (fo=2, routed)           0.125    -0.253    i2s_transceiver_0/r_data_rx_int[6]
+    SLICE_X4Y70          FDCE                                         r  i2s_transceiver_0/r_data_rx_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.919    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.659    -1.740 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.560    -1.181    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.152 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.863    -0.289    i2s_transceiver_0/clk_out1
+    SLICE_X4Y70          FDCE                                         r  i2s_transceiver_0/r_data_rx_reg[6]/C
+                         clock pessimism             -0.215    -0.504    
+    SLICE_X4Y70          FDCE (Hold_fdce_C_D)         0.070    -0.434    i2s_transceiver_0/r_data_rx_reg[6]
+  -------------------------------------------------------------------
+                         required time                          0.434    
+                         arrival time                          -0.253    
+  -------------------------------------------------------------------
+                         slack                                  0.181    
+
+Slack (MET) :             0.182ns  (arrival time - required time)
+  Source:                 i2s_transceiver_0/r_data_rx_int_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/r_data_rx_reg[7]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.269ns  (logic 0.141ns (52.434%)  route 0.128ns (47.566%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.289ns
+    Source Clock Delay      (SCD):    -0.519ns
+    Clock Pessimism Removal (CPR):    0.215ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.690    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.342    -1.652 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.514    -1.138    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.112 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.593    -0.519    i2s_transceiver_0/clk_out1
+    SLICE_X4Y71          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y71          FDCE (Prop_fdce_C_Q)         0.141    -0.378 r  i2s_transceiver_0/r_data_rx_int_reg[7]/Q
+                         net (fo=2, routed)           0.128    -0.250    i2s_transceiver_0/r_data_rx_int[7]
+    SLICE_X4Y70          FDCE                                         r  i2s_transceiver_0/r_data_rx_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.919    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.659    -1.740 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.560    -1.181    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.152 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.863    -0.289    i2s_transceiver_0/clk_out1
+    SLICE_X4Y70          FDCE                                         r  i2s_transceiver_0/r_data_rx_reg[7]/C
+                         clock pessimism             -0.215    -0.504    
+    SLICE_X4Y70          FDCE (Hold_fdce_C_D)         0.072    -0.432    i2s_transceiver_0/r_data_rx_reg[7]
+  -------------------------------------------------------------------
+                         required time                          0.432    
+                         arrival time                          -0.250    
+  -------------------------------------------------------------------
+                         slack                                  0.182    
+
+Slack (MET) :             0.182ns  (arrival time - required time)
+  Source:                 i2s_transceiver_0/r_data_rx_int_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/r_data_rx_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.263ns  (logic 0.141ns (53.571%)  route 0.122ns (46.429%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.289ns
+    Source Clock Delay      (SCD):    -0.519ns
+    Clock Pessimism Removal (CPR):    0.215ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.690    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.342    -1.652 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.514    -1.138    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.112 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.593    -0.519    i2s_transceiver_0/clk_out1
+    SLICE_X5Y71          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y71          FDCE (Prop_fdce_C_Q)         0.141    -0.378 r  i2s_transceiver_0/r_data_rx_int_reg[1]/Q
+                         net (fo=2, routed)           0.122    -0.256    i2s_transceiver_0/r_data_rx_int[1]
+    SLICE_X5Y70          FDCE                                         r  i2s_transceiver_0/r_data_rx_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.919    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.659    -1.740 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.560    -1.181    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.152 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.863    -0.289    i2s_transceiver_0/clk_out1
+    SLICE_X5Y70          FDCE                                         r  i2s_transceiver_0/r_data_rx_reg[1]/C
+                         clock pessimism             -0.215    -0.504    
+    SLICE_X5Y70          FDCE (Hold_fdce_C_D)         0.066    -0.438    i2s_transceiver_0/r_data_rx_reg[1]
+  -------------------------------------------------------------------
+                         required time                          0.438    
+                         arrival time                          -0.256    
+  -------------------------------------------------------------------
+                         slack                                  0.182    
+
+Slack (MET) :             0.185ns  (arrival time - required time)
+  Source:                 i2s_transceiver_0/r_data_rx_int_reg[11]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/r_data_rx_int_reg[12]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.257ns  (logic 0.141ns (54.852%)  route 0.116ns (45.148%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.291ns
+    Source Clock Delay      (SCD):    -0.519ns
+    Clock Pessimism Removal (CPR):    0.215ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.690    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.342    -1.652 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.514    -1.138    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.112 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.593    -0.519    i2s_transceiver_0/clk_out1
+    SLICE_X4Y72          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[11]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y72          FDCE (Prop_fdce_C_Q)         0.141    -0.378 r  i2s_transceiver_0/r_data_rx_int_reg[11]/Q
+                         net (fo=2, routed)           0.116    -0.262    i2s_transceiver_0/r_data_rx_int[11]
+    SLICE_X6Y72          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.919    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.659    -1.740 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.560    -1.181    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.152 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.861    -0.291    i2s_transceiver_0/clk_out1
+    SLICE_X6Y72          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[12]/C
+                         clock pessimism             -0.215    -0.506    
+    SLICE_X6Y72          FDCE (Hold_fdce_C_D)         0.059    -0.447    i2s_transceiver_0/r_data_rx_int_reg[12]
+  -------------------------------------------------------------------
+                         required time                          0.447    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  0.185    
+
+Slack (MET) :             0.186ns  (arrival time - required time)
+  Source:                 i2s_transceiver_0/r_data_rx_int_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Destination:            i2s_transceiver_0/r_data_rx_int_reg[8]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@44.286ns period=88.571ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.271ns  (logic 0.141ns (52.047%)  route 0.130ns (47.953%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.291ns
+    Source Clock Delay      (SCD):    -0.519ns
+    Clock Pessimism Removal (CPR):    0.215ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.690    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.342    -1.652 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.514    -1.138    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.112 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.593    -0.519    i2s_transceiver_0/clk_out1
+    SLICE_X4Y71          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y71          FDCE (Prop_fdce_C_Q)         0.141    -0.378 r  i2s_transceiver_0/r_data_rx_int_reg[7]/Q
+                         net (fo=2, routed)           0.130    -0.248    i2s_transceiver_0/r_data_rx_int[7]
+    SLICE_X4Y72          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    i2s_clock/inst/CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  i2s_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.481     0.919    i2s_clock/inst/clk_in1_clk_wiz_0
+    PLLE2_ADV_X1Y2       PLLE2_ADV (Prop_plle2_adv_CLKIN1_CLKOUT0)
+                                                     -2.659    -1.740 r  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.560    -1.181    i2s_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.152 r  i2s_clock/inst/clkout1_buf/O
+                         net (fo=213, routed)         0.861    -0.291    i2s_transceiver_0/clk_out1
+    SLICE_X4Y72          FDCE                                         r  i2s_transceiver_0/r_data_rx_int_reg[8]/C
+                         clock pessimism             -0.215    -0.506    
+    SLICE_X4Y72          FDCE (Hold_fdce_C_D)         0.072    -0.434    i2s_transceiver_0/r_data_rx_int_reg[8]
+  -------------------------------------------------------------------
+                         required time                          0.434    
+                         arrival time                          -0.248    
+  -------------------------------------------------------------------
+                         slack                                  0.186    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_out1_clk_wiz_0
+Waveform(ns):       { 0.000 44.286 }
+Period(ns):         88.571
+Sources:            { i2s_clock/inst/plle2_adv_inst/CLKOUT0 }
+
+Check Type        Corner  Lib Pin            Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
+Min Period        n/a     BUFG/I             n/a            2.155         88.571      86.416     BUFGCTRL_X0Y16  i2s_clock/inst/clkout1_buf/I
+Min Period        n/a     PLLE2_ADV/CLKOUT0  n/a            1.249         88.571      87.322     PLLE2_ADV_X1Y2  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+Min Period        n/a     FDCE/C             n/a            1.000         88.571      87.571     SLICE_X1Y75     i2s_transceiver_0/l_data_rx_int_reg[0]/C
+Min Period        n/a     FDCE/C             n/a            1.000         88.571      87.571     SLICE_X2Y76     i2s_transceiver_0/l_data_rx_int_reg[10]/C
+Min Period        n/a     FDCE/C             n/a            1.000         88.571      87.571     SLICE_X2Y76     i2s_transceiver_0/l_data_rx_int_reg[11]/C
+Min Period        n/a     FDCE/C             n/a            1.000         88.571      87.571     SLICE_X1Y77     i2s_transceiver_0/l_data_rx_int_reg[12]/C
+Min Period        n/a     FDCE/C             n/a            1.000         88.571      87.571     SLICE_X1Y80     i2s_transceiver_0/l_data_rx_int_reg[13]/C
+Min Period        n/a     FDCE/C             n/a            1.000         88.571      87.571     SLICE_X1Y80     i2s_transceiver_0/l_data_rx_int_reg[14]/C
+Min Period        n/a     FDCE/C             n/a            1.000         88.571      87.571     SLICE_X1Y80     i2s_transceiver_0/l_data_rx_int_reg[15]/C
+Min Period        n/a     FDCE/C             n/a            1.000         88.571      87.571     SLICE_X1Y81     i2s_transceiver_0/l_data_rx_int_reg[16]/C
+Max Period        n/a     PLLE2_ADV/CLKOUT0  n/a            160.000       88.571      71.429     PLLE2_ADV_X1Y2  i2s_clock/inst/plle2_adv_inst/CLKOUT0
+Low Pulse Width   Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X3Y82     i2s_transceiver_0/l_data_rx_int_reg[20]/C
+Low Pulse Width   Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X3Y82     i2s_transceiver_0/l_data_rx_int_reg[21]/C
+Low Pulse Width   Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X3Y82     i2s_transceiver_0/l_data_rx_int_reg[22]/C
+Low Pulse Width   Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X2Y82     i2s_transceiver_0/l_data_rx_int_reg[23]/C
+Low Pulse Width   Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X1Y82     i2s_transceiver_0/l_data_rx_reg[16]/C
+Low Pulse Width   Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X1Y82     i2s_transceiver_0/l_data_rx_reg[17]/C
+Low Pulse Width   Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X1Y82     i2s_transceiver_0/l_data_rx_reg[18]/C
+Low Pulse Width   Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X8Y73     i2s_transceiver_0/r_data_tx_int_reg[10]/C
+Low Pulse Width   Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X8Y73     i2s_transceiver_0/r_data_tx_int_reg[11]/C
+Low Pulse Width   Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X8Y73     i2s_transceiver_0/r_data_tx_int_reg[12]/C
+High Pulse Width  Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X1Y75     i2s_transceiver_0/l_data_rx_int_reg[0]/C
+High Pulse Width  Fast    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X1Y75     i2s_transceiver_0/l_data_rx_int_reg[0]/C
+High Pulse Width  Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X2Y76     i2s_transceiver_0/l_data_rx_int_reg[10]/C
+High Pulse Width  Fast    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X2Y76     i2s_transceiver_0/l_data_rx_int_reg[10]/C
+High Pulse Width  Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X2Y76     i2s_transceiver_0/l_data_rx_int_reg[11]/C
+High Pulse Width  Fast    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X2Y76     i2s_transceiver_0/l_data_rx_int_reg[11]/C
+High Pulse Width  Fast    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X1Y77     i2s_transceiver_0/l_data_rx_int_reg[12]/C
+High Pulse Width  Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X1Y80     i2s_transceiver_0/l_data_rx_int_reg[13]/C
+High Pulse Width  Fast    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X1Y80     i2s_transceiver_0/l_data_rx_int_reg[13]/C
+High Pulse Width  Slow    FDCE/C             n/a            0.500         44.286      43.786     SLICE_X1Y80     i2s_transceiver_0/l_data_rx_int_reg[14]/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clkfbout_clk_wiz_0
+  To Clock:  clkfbout_clk_wiz_0
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack       17.845ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clkfbout_clk_wiz_0
+Waveform(ns):       { 0.000 10.000 }
+Period(ns):         20.000
+Sources:            { i2s_clock/inst/plle2_adv_inst/CLKFBOUT }
+
+Check Type  Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
+Min Period  n/a     BUFG/I              n/a            2.155         20.000      17.845     BUFGCTRL_X0Y17  i2s_clock/inst/clkf_buf/I
+Min Period  n/a     PLLE2_ADV/CLKFBOUT  n/a            1.249         20.000      18.751     PLLE2_ADV_X1Y2  i2s_clock/inst/plle2_adv_inst/CLKFBOUT
+Min Period  n/a     PLLE2_ADV/CLKFBIN   n/a            1.249         20.000      18.751     PLLE2_ADV_X1Y2  i2s_clock/inst/plle2_adv_inst/CLKFBIN
+Max Period  n/a     PLLE2_ADV/CLKFBIN   n/a            52.633        20.000      32.633     PLLE2_ADV_X1Y2  i2s_clock/inst/plle2_adv_inst/CLKFBIN
+Max Period  n/a     PLLE2_ADV/CLKFBOUT  n/a            160.000       20.000      140.000    PLLE2_ADV_X1Y2  i2s_clock/inst/plle2_adv_inst/CLKFBOUT
+
+
+
