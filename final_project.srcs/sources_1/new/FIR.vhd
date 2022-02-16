@@ -61,7 +61,7 @@ begin
     p_data       <= (others=>(others=>'0'));
     --r_coeff      <= (others=>(others=>'0'));
   elsif(rising_edge(clk)) then
-    p_data      <= signed(i_data)&p_data(0 to p_data'length-2);
+    p_data      <= signed('0'&i_data)&p_data(0 to p_data'length-2);
   end if;
 end process p_input;
 
@@ -104,7 +104,11 @@ begin
   if(rst='1') then
     o_data     <= (others=>'0');
   elsif(rising_edge(clk)) then
-    o_data     <= std_logic_vector(r_add_st1(shift+23 downto shift));
+    if r_add_st1(r_add_st1'length-1) = '1' then
+        o_data <= (others => '0');
+    else
+        o_data <= std_logic_vector(r_add_st1(shift+23 downto shift));
+    end if;
   end if;
 end process p_output;
 
