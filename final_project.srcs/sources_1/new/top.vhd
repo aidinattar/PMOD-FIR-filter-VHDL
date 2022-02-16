@@ -37,23 +37,15 @@ USE ieee.std_logic_1164.all;
 
 ENTITY top IS
     GENERIC(
-        shift       : INTEGER := 7;
-        d_width     : INTEGER := 24;
-        coeff1  : integer :=  1;
-        coeff2  : integer :=  2;
-        coeff3  : integer :=  4;
-        coeff4  : integer :=  7;
-        coeff5  : integer := 11;
-        coeff6  : integer := 14;
-        coeff7  : integer := 16;
-        coeff8  : integer := 17;
-        coeff9  : integer := 16;
-        coeff10 : integer := 14;
-        coeff11 : integer := 11;
-        coeff12 : integer :=  7;
-        coeff13 : integer :=  4;
-        coeff14 : integer :=  2;
-        coeff15 : integer :=  1);                    --data width
+        shift   : INTEGER := 7;
+        d_width : INTEGER := 24;
+        coeff1  : integer :=  3;
+        coeff2  : integer := 12;
+        coeff3  : integer := 30;
+        coeff4  : integer := 39;
+        coeff5  : integer := 30;
+        coeff6  : integer := 12;
+        coeff7  : integer :=  3);                    --data width
     PORT(
         CLK100MHZ   :  IN  STD_LOGIC;                     --system clock (100 MHz on Basys board)
         reset_n     :  IN  STD_LOGIC;                     --active low asynchronous reset
@@ -107,30 +99,20 @@ ARCHITECTURE rtl OF top IS
     COMPONENT fir_filter IS
         GENERIC(
             d_width : integer := 24;
-            shift   : integer := 7;
-            coeff1  : integer :=  1;
-            coeff2  : integer :=  2;
-            coeff3  : integer :=  4;
-            coeff4  : integer :=  7;
-            coeff5  : integer := 11;
-            coeff6  : integer := 14;
-            coeff7  : integer := 16;
-            coeff8  : integer := 17;
-            coeff9  : integer := 16;
-            coeff10 : integer := 14;
-            coeff11 : integer := 11;
-            coeff12 : integer :=  7;
-            coeff13 : integer :=  4;
-            coeff14 : integer :=  2;
-            coeff15 : integer :=  1);
+            shift   : integer :=  7;
+            coeff1  : integer :=  3;
+            coeff2  : integer := 12;
+            coeff3  : integer := 30;
+            coeff4  : integer := 39;
+            coeff5  : integer := 30;
+            coeff6  : integer := 12;
+            coeff7  : integer :=  3);
         PORT(
             clk        : in  std_logic;                        -- system clock
             rst        : in  std_logic;                        -- reset
             i_data     : in  std_logic_vector( d_width-1 downto 0);    -- input at time n
             o_data     : out std_logic_vector( d_width-1 downto 0));   -- output at time n
     END COMPONENT fir_filter;
-
-
 
 BEGIN
 
@@ -148,20 +130,19 @@ BEGIN
     n_word_select <= not word_select;
     -- passabasso
     r_fir_filter: fir_filter
-    GENERIC MAP(d_width => d_width, shift => shift, 
+    GENERIC MAP(d_width => d_width, shift => shift,
                 coeff1  =>  coeff1,  coeff2  =>  coeff2,  coeff3  =>  coeff3,  coeff4  => coeff4,  coeff5  => coeff5, 
-                coeff6  =>  coeff6,  coeff7  =>  coeff7,  coeff8  =>  coeff8,  coeff9  => coeff9,  coeff10 => coeff10, 
-                coeff11 =>  coeff11, coeff12 =>  coeff12, coeff13 =>  coeff13, coeff14 => coeff14, coeff15 => coeff15)
+                coeff6  =>  coeff6,  coeff7  =>  coeff7)--,  coeff8  =>  coeff8,  coeff9  => coeff9,  coeff10 => coeff10, 
+                --coeff11 =>  coeff11, coeff12 =>  coeff12, coeff13 =>  coeff13, coeff14 => coeff14, coeff15 => coeff15)
     PORT MAP(clk => n_word_select, rst => rst_r, i_data => r_data_rx, o_data => r_data_tx);
     
     -- passaalto
     l_fir_filter: fir_filter
     GENERIC MAP(d_width => d_width, shift => shift, 
-                coeff1  =>   0, coeff2  =>   -1, coeff3  =>   -2,  coeff4  =>  -4, coeff5  => -7, 
-                coeff6  =>  -9, coeff7  =>  -11, coeff8  =>  116,  coeff9  => -11, coeff10 => -9, 
-                coeff11 =>  -7, coeff12 =>   -4, coeff13 =>   -2,  coeff14 =>  -1, coeff15 =>  0)
+                coeff1  =>  -1, coeff2  =>   -2, coeff3  =>   -4,  coeff4  =>  122, coeff5  => -4, 
+                coeff6  =>  -2, coeff7  =>   -1)-- coeff8  =>  116,  coeff9  => -11, coeff10 => -9, 
+                --coeff11 =>  -7, coeff12 =>   -4, coeff13 =>   -2,  coeff14 =>  -1, coeff15 =>  0)
     PORT MAP(clk => word_select, rst => rst_l, i_data => l_data_rx, o_data => l_data_tx);
-
 
     mclk(0) <= master_clk;  --output master clock to ADC
     mclk(1) <= master_clk;  --output master clock to DAC

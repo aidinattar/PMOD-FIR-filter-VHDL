@@ -16,21 +16,21 @@ entity fir_filter is
 generic(
     d_width : integer := 24;
     shift   : integer :=  7;
-    coeff1  : integer :=  1;
-    coeff2  : integer :=  2;
-    coeff3  : integer :=  4;
-    coeff4  : integer :=  7;
-    coeff5  : integer := 11;
-    coeff6  : integer := 14;
-    coeff7  : integer := 16;
-    coeff8  : integer := 17;
-    coeff9  : integer := 16;
-    coeff10 : integer := 14;
-    coeff11 : integer := 11;
-    coeff12 : integer :=  7;
-    coeff13 : integer :=  4;
-    coeff14 : integer :=  2;
-    coeff15 : integer :=  1);
+    coeff1  : integer :=  3;
+    coeff2  : integer := 12;
+    coeff3  : integer := 30;
+    coeff4  : integer := 39;
+    coeff5  : integer := 30;
+    coeff6  : integer := 12;
+    coeff7  : integer :=  3);
+    --coeff8  : integer := 17;
+    --coeff9  : integer := 16;
+    --coeff10 : integer := 14;
+    --coeff11 : integer := 11;
+    --coeff12 : integer :=  7;
+    --coeff13 : integer :=  4;
+    --coeff14 : integer :=  2;
+    --coeff15 : integer :=  1);
 port(
     clk        : in  std_logic;                        -- system clock
     rst        : in  std_logic;                        -- reset
@@ -40,18 +40,18 @@ end fir_filter;
 
 architecture rtl of fir_filter is
 
-type t_data_pipe      is array (0 to 14) of signed(d_width-1   downto 0);
-type t_coeff          is array (0 to 14) of signed(7           downto 0);
-type t_mult           is array (0 to 14) of signed(8+d_width-1 downto 0);
+type t_data_pipe      is array (0 to 6) of signed(d_width-1     downto 0);
+type t_coeff          is array (0 to 6) of signed(7             downto 0);
+type t_mult           is array (0 to 6) of signed(8+d_width-1   downto 0);
 --type t_add_st0        is array (0 to 1) of signed(15+1        downto 0);
 
 signal r_coeff              : t_coeff := (to_signed(coeff1 , 8), to_signed(coeff2 , 8), to_signed(coeff3 , 8), to_signed(coeff4 , 8), to_signed(coeff5 , 8),
-                                          to_signed(coeff6 , 8), to_signed(coeff7 , 8), to_signed(coeff8 , 8), to_signed(coeff9 , 8), to_signed(coeff10, 8),
-                                          to_signed(coeff11, 8), to_signed(coeff12, 8), to_signed(coeff13, 8), to_signed(coeff14, 8), to_signed(coeff15, 8));
+                                          to_signed(coeff6 , 8), to_signed(coeff7 , 8));--, to_signed(coeff8 , 8), to_signed(coeff9 , 8), to_signed(coeff10, 8),
+                                          --to_signed(coeff11, 8), to_signed(coeff12, 8), to_signed(coeff13, 8), to_signed(coeff14, 8), to_signed(coeff15, 8));
 signal p_data               : t_data_pipe;
 signal r_mult               : t_mult;
 --signal r_add_st0            : t_add_st0;
-signal r_add_st1            : signed(22+d_width downto 0);
+signal r_add_st1            : signed(14+d_width downto 0);
 
 begin
 
@@ -61,7 +61,7 @@ begin
     p_data       <= (others=>(others=>'0'));
     --r_coeff      <= (others=>(others=>'0'));
   elsif(rising_edge(clk)) then
-    p_data      <= signed('0'&i_data)&p_data(0 to p_data'length-2);
+    p_data      <= signed(i_data)&p_data(0 to p_data'length-2);
   end if;
 end process p_input;
 
@@ -104,11 +104,7 @@ begin
   if(rst='1') then
     o_data     <= (others=>'0');
   elsif(rising_edge(clk)) then
-    if r_add_st1(r_add_st1'length-1) = '1' then
-        o_data <= (others => '0');
-    else
-        o_data <= std_logic_vector(r_add_st1(shift+23 downto shift));
-    end if;
+    o_data     <= std_logic_vector(r_add_st1(shift+23 downto shift));
   end if;
 end process p_output;
 
