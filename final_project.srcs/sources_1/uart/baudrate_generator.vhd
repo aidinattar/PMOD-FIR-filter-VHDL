@@ -14,7 +14,7 @@ end entity baudrate_generator;
 
 architecture rtl of baudrate_generator is
   signal counter   : unsigned(9 downto 0) := (others => '0');
-  constant divisor : unsigned(9 downto 0) := to_unsigned(867, 10);
+  constant divisor : unsigned(9 downto 0) := to_unsigned(97, 10); --modified such that it takes in input master clock and not the system clock
 begin  -- architecture rtl
   main : process (clock) is
   begin  -- process main

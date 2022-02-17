@@ -1,13 +1,14 @@
+----------------------------------------------------------------------------------
+-- Company: Group 5
+-- Engineer: Agosti Luca, Attar Aidin, Baci Ema, Coppi Alberto
+-- 
+-- Create Date: 01/11/2022 05:24:33 PM
+-- Design Name: FIR FILTER
+-- Module Name: fir - Behavioral
+-- Project Name: PMOD - FIR Filter
+-- Description: fir filter source
+----------------------------------------------------------------------------------
 
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or signed values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
