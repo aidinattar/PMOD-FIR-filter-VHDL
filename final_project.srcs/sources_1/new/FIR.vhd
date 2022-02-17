@@ -14,23 +14,23 @@ use ieee.numeric_std.all;
 
 entity fir_filter is
 generic(
-    d_width : integer := 24;
-    shift   : integer :=  7;
-    coeff1  : integer :=  1;
-    coeff2  : integer :=  2;
-    coeff3  : integer :=  4;
-    coeff4  : integer :=  7;
-    coeff5  : integer := 11;
-    coeff6  : integer := 14;
-    coeff7  : integer := 16;
-    coeff8  : integer := 17;
-    coeff9  : integer := 16;
-    coeff10 : integer := 14;
-    coeff11 : integer := 11;
-    coeff12 : integer :=  7;
-    coeff13 : integer :=  4;
-    coeff14 : integer :=  2;
-    coeff15 : integer :=  1);
+    d_width : integer;
+    shift   : integer;
+    coeff1  : integer;
+    coeff2  : integer;
+    coeff3  : integer;
+    coeff4  : integer;
+    coeff5  : integer;
+    coeff6  : integer;
+    coeff7  : integer;
+    coeff8  : integer;
+    coeff9  : integer;
+    coeff10 : integer;
+    coeff11 : integer;
+    coeff12 : integer;
+    coeff13 : integer;
+    coeff14 : integer;
+    coeff15 : integer);
 port(
     clk        : in  std_logic;                        -- system clock
     rst        : in  std_logic;                        -- reset
@@ -51,7 +51,7 @@ signal r_coeff              : t_coeff := (to_signed(coeff1 , 8), to_signed(coeff
 signal p_data               : t_data_pipe;
 signal r_mult               : t_mult;
 --signal r_add_st0            : t_add_st0;
-signal r_add_st1            : signed(22+d_width downto 0);
+signal r_add_st1            : signed(13+d_width downto 0);
 
 begin
 
@@ -61,7 +61,7 @@ begin
     p_data       <= (others=>(others=>'0'));
     --r_coeff      <= (others=>(others=>'0'));
   elsif(rising_edge(clk)) then
-    p_data      <= signed('0'&i_data)&p_data(0 to p_data'length-2);
+    p_data      <= signed(i_data)&p_data(0 to p_data'length-2);
   end if;
 end process p_input;
 
@@ -92,10 +92,14 @@ begin
   if(rst='1') then
     r_add_st1     <= (others=>'0');
   elsif(rising_edge(clk)) then
-    r_add_st1 <= (others=>'0');
-    for k in 0 to r_mult'length-1 loop
-        r_add_st1 <= r_add_st1 + resize(r_mult(k),r_add_st1'length);
-    end loop;
+    r_add_st1 <= resize(r_mult(0),r_add_st1'length) + resize(r_mult(1),r_add_st1'length) +
+                 resize(r_mult(2),r_add_st1'length) + resize(r_mult(3),r_add_st1'length) +
+                 resize(r_mult(4),r_add_st1'length) + resize(r_mult(5),r_add_st1'length) +
+                 resize(r_mult(6),r_add_st1'length) + resize(r_mult(7),r_add_st1'length) +
+                 resize(r_mult(8),r_add_st1'length) + resize(r_mult(9),r_add_st1'length) +
+                 resize(r_mult(10),r_add_st1'length) + resize(r_mult(11),r_add_st1'length) +
+                 resize(r_mult(12),r_add_st1'length) + resize(r_mult(13),r_add_st1'length) +
+                 resize(r_mult(14),r_add_st1'length);
   end if;
 end process p_add_st1;
 
@@ -104,11 +108,7 @@ begin
   if(rst='1') then
     o_data     <= (others=>'0');
   elsif(rising_edge(clk)) then
-    if r_add_st1(r_add_st1'length-1) = '1' then
-        o_data <= (others => '0');
-    else
-        o_data <= std_logic_vector(r_add_st1(shift+23 downto shift));
-    end if;
+    o_data     <= std_logic_vector(r_add_st1(shift+23 downto shift));
   end if;
 end process p_output;
 
