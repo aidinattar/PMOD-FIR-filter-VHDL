@@ -205,7 +205,10 @@ BEGIN
     -- state machine to select which channel to send with uart
     p_uart_transmitter : process (master_clk, busy)
     begin
-        if rising_edge(master_clk) then
+        if reset_n = '1' then
+            data_valid <= '0';
+            state <= idle_l;
+        elsif rising_edge(master_clk) then
             case state is
                 when idle_l =>
                     if ws(0) = '1' then
