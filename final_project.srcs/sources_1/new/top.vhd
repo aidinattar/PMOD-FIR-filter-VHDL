@@ -76,8 +76,9 @@ ARCHITECTURE rtl OF top IS
     SIGNAL busy           :  STD_LOGIC;
 
     
-    TYPE state_t IS (idle, left, right, prebusy, checkbusy);
-    SIGNAL state : state_t := idle;
+    TYPE state_t IS (idle_l, left,  prebusy_l, checkbusy_l,
+                     idle_r, right, prebusy_r, checkbusy_r);
+    SIGNAL state : state_t := idle_l;
 
     --declare PLL to create 11.29 MHz master clock from 100 MHz system clock
     COMPONENT clk_wiz_0 IS
@@ -206,29 +207,34 @@ BEGIN
     begin
         if rising_edge(master_clk) then
             case state is
-                when idle =>
+                when idle_l =>
                     if ws(0) = '1' then
                         state <= left;
                         data_valid <= '1';
-                    --elsif ws(0) = '0' then
-                    --    state <= right;
-                    --    data_valid <= '1';
                     end if;
                 when left =>
                     data_tx_uart <= std_logic_vector(l_data_tx(23 downto 16));
-                    state <= prebusy;
-                when prebusy =>
+                    state <= prebusy_l;
+                when prebusy_l =>
+                    state <= checkbusy_l;
+                when checkbusy_l =>
+                    if busy = '0' then
+                        state <= idle_r;
+                    end if;
+                    data_valid <= '0';
+                when idle_r =>
                     if ws(0) = '0' then
                         state <= right;
                         data_valid <= '1';
                     end if;
-                    --state <= checkbusy;
                 when right =>
                     data_tx_uart <= std_logic_vector(r_data_tx(23 downto 16));
-                    state <= checkbusy;
-                when checkbusy =>
+                    state <= prebusy_r;
+                when prebusy_r =>
+                    state <= checkbusy_r;
+                when checkbusy_r =>
                     if busy = '0' then
-                        state <= idle;
+                        state <= idle_l;
                     end if;
                     data_valid <= '0';
             end case;

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_top_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="382427381666fs"></ZoomStartTime>
+      <ZoomEndTime time="382977381667fs"></ZoomEndTime>
+      <Cursor1Time time="382885715000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="142"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject type="logic" fp_name="/tb_top/s_clk">
+      <obj_property name="ElementShortName">s_clk</obj_property>
+      <obj_property name="ObjectShortName">s_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/s_rst">
+      <obj_property name="ElementShortName">s_rst</obj_property>
+      <obj_property name="ObjectShortName">s_rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/s_sd_rx">
+      <obj_property name="ElementShortName">s_sd_rx</obj_property>
+      <obj_property name="ObjectShortName">s_sd_rx</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/s_sd_tx">
+      <obj_property name="ElementShortName">s_sd_tx</obj_property>
+      <obj_property name="ObjectShortName">s_sd_tx</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/s_data">
+      <obj_property name="ElementShortName">s_data</obj_property>
+      <obj_property name="ObjectShortName">s_data</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/s_mclk">
+      <obj_property name="ElementShortName">s_mclk[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s_mclk[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/s_sclk">
+      <obj_property name="ElementShortName">s_sclk[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sclk[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/s_ws">
+      <obj_property name="ElementShortName">s_ws[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s_ws[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/uut/word_select">
+      <obj_property name="ElementShortName">word_select</obj_property>
+      <obj_property name="ObjectShortName">word_select</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb_top/uut/state">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/s_rst_r">
+      <obj_property name="ElementShortName">s_rst_r</obj_property>
+      <obj_property name="ObjectShortName">s_rst_r</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/s_rst_l">
+      <obj_property name="ElementShortName">s_rst_l</obj_property>
+      <obj_property name="ObjectShortName">s_rst_l</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/s_uart_rxd_out">
+      <obj_property name="ElementShortName">s_uart_rxd_out</obj_property>
+      <obj_property name="ObjectShortName">s_uart_rxd_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/uut/uart_transmitter_1/busy">
+      <obj_property name="ElementShortName">busy</obj_property>
+      <obj_property name="ObjectShortName">busy</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/uut/uart_transmitter_1/data_valid">
+      <obj_property name="ElementShortName">data_valid</obj_property>
+      <obj_property name="ObjectShortName">data_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/uut/data_tx_uart">
+      <obj_property name="ElementShortName">data_tx_uart[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_tx_uart[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/uut/r_fir_filter/o_data">
+      <obj_property name="ElementShortName">o_data[23:0]</obj_property>
+      <obj_property name="ObjectShortName">o_data[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/uut/i2s_transceiver_0/r_data_tx_int">
+      <obj_property name="ElementShortName">r_data_tx_int[23:0]</obj_property>
+      <obj_property name="ObjectShortName">r_data_tx_int[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/uut/l_fir_filter/o_data">
+      <obj_property name="ElementShortName">o_data[23:0]</obj_property>
+      <obj_property name="ObjectShortName">o_data[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/uut/i2s_transceiver_0/l_data_tx_int">
+      <obj_property name="ElementShortName">l_data_tx_int[23:0]</obj_property>
+      <obj_property name="ObjectShortName">l_data_tx_int[23:0]</obj_property>
+   </wvobject>
+</wave_config>
