@@ -8,43 +8,13 @@
 -- Project Name: PMOD - FIR Filter
 -- Description: top of the project
 ----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
-
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
 
 ENTITY top IS
     GENERIC(
         shift   : INTEGER := 7;
-        d_width : INTEGER := 24;
-        coeff1  : integer :=  0;
-        coeff2  : integer :=  0;
-        coeff3  : integer :=  0;
-        coeff4  : integer :=  0;
-        coeff5  : integer :=  0;
-        coeff6  : integer :=  0;
-        coeff7  : integer :=  0;
-        coeff8  : integer :=  0;
-        coeff9  : integer :=  0;
-        coeff10 : integer :=  0;
-        coeff11 : integer :=  0;
-        coeff12 : integer :=  0;
-        coeff13 : integer :=  0;
-        coeff14 : integer :=  0;
-        coeff15 : integer :=  0);                    --data width
+        d_width : INTEGER := 24);                    --data width
     PORT(
         CLK100MHZ    :  IN  STD_LOGIC;                     --system clock (100 MHz on Basys board)
         reset_n      :  IN  STD_LOGIC;                     --active low asynchronous reset
