@@ -70,7 +70,7 @@ component top is
         uart_rxd_out :  OUT STD_LOGIC);                    --serial data out UART
 end component top;
 
-signal s_clk, s_rst, s_sd_rx, s_sd_tx, s_data : std_logic;
+signal s_clk, s_rst, s_sd_rx, s_sd_tx: std_logic;
 signal s_mclk, s_sclk, s_ws : std_logic_vector(1 downto 0);
 signal s_rst_r, s_rst_l : std_logic;
 signal s_uart_rxd_out : std_logic;
@@ -107,7 +107,7 @@ end process p_rst_r;
 p_sd_rx : process is
 variable v_LINE : line;
 variable i_data : integer;
-begin 
+begin
     --file_open(file_VECTORS, "/home/alberto/input.txt", read_mode); --apro l'input
     file_open(file_VECTORS, "/home/aidin/CrucialSSD/University/Management_and_Analysis_of_Physics_Datasets/Laboratory/input.txt", read_mode); --apro l'input
     wait until rising_edge(s_clk); --ricorda che questi sono i clock veloci 
@@ -120,7 +120,6 @@ begin
             s_sd_rx <= '0'; wait for 5 ns;
         end if;
     end loop data;
-    
 end process p_sd_rx;
 
 end Behavioral;

@@ -50,6 +50,7 @@ ENTITY top IS
         reset_n      :  IN  STD_LOGIC;                     --active low asynchronous reset
         rst_l        :  IN  STD_LOGIC;                     --reset FIR left
         rst_r        :  IN  STD_LOGIC;                     --reset FIR right
+        rst_uart     :  IN  STD_LOGIC;                     --reset UART
         mclk         :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --master clock
         sclk         :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --serial clock (or bit clock)
         ws           :  OUT STD_LOGIC_VECTOR(1 DOWNTO 0);  --word select (or left-right clock)
@@ -205,7 +206,7 @@ BEGIN
     -- state machine to select which channel to send with uart
     p_uart_transmitter : process (master_clk, busy)
     begin
-        if reset_n = '1' then
+        if rst_uart = '1' then
             data_valid <= '0';
             state <= idle_l;
         elsif rising_edge(master_clk) then
