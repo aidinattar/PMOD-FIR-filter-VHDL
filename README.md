@@ -25,10 +25,13 @@ Management and Analysis of Physical Dataset course A.Y. 2021/2022.
     - The folder final_project.srcs contains the final files ready to be used in the computer connected to the FPGA.
     
     - The Jupyter Notebook contains all python code used for calibration and data analysis
+    
+    - The file Group5_MAPD_Project_Report.pdf is the final report
 
 ## Abstract
 
-The goal of this lab project is the implementation of a simple FIR-filter on a FPGA and its employment in an audio system obtained using a PMOD I2S2. Our task is to write down the VHDL source code that will be synthetized and implemented in the hardware.\\
+The goal of this lab project is the implementation of a simple FIR-filter on a FPGA and its employment in an audio system obtained using a PMOD I2S2. Our task is to write down the VHDL source code that will be synthetized and implemented in the hardware.
+
 The top entity implemented is shown in Fig. \ref{fig:top_scheme}. The filter block communicates with both the PC and the PMOD. Input data, digitized by the PMOD, are retrieved through a I2S receiver, filtered, and then sent back through a I2S transmitter; filtered data are also sent through a UART transmitter to the PC.
 
 <p align="center">
