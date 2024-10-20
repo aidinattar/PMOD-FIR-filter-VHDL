@@ -3,8 +3,6 @@
 Management and Analysis of Physical Dataset course A.Y. 2021/2022.
 
 ## Group 5:
-
-    - Agosti Luca
     
     - Attar Aidin
     
